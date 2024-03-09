@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { FoodButton, FoodItem } from "@/components/design/food";
 import MilkIcon from "@/components/icons/MilkIcon";
 import Navbar from "@/components/design/navbar";
-import AddButton from "@/components/design/add-button";
+import AddButton, { OtherAddButton } from "@/components/design/add-button";
 import { Headline, Title } from "@/components/design/typography";
 import Avatar from "@/components/design/avatar";
 import MenuOverlay from "@/components/design/menu-overlay";
@@ -17,8 +17,8 @@ import EggIcon from "@/components/icons/EggIcon";
 import GlutenIcon from "@/components/icons/GlutenIcon";
 import { Coinbar } from "@/components/design/coinbar";
 
-import Image from "next/image";
 import MapPreview from "@/components/design/map-preview";
+import ThumbsUpIcon from "@/components/icons/ThumbsUpIcon";
 
 export default function DesignSystem() {
   const menuItems = [
@@ -64,7 +64,7 @@ export default function DesignSystem() {
       {/* Add section */}
       <section className="flex gap-5">
         <AddButton />
-        <AddButton variant="other" />
+        <OtherAddButton />
       </section>
       {/* Avatar section */}
       <section className="flex gap-5">
@@ -109,6 +109,9 @@ export default function DesignSystem() {
       </section>
       <section>
         <MapPreview />
+      </section>
+      <section>
+        <ThumbsUpIcon width={123.36} height={105} />
       </section>
     </div>
   );
