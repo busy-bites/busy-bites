@@ -5,6 +5,7 @@ import Navbar from "@/components/design/navbar";
 import AddButton from "@/components/design/add-button";
 import { Headline, Title } from "@/components/design/typography";
 import Avatar from "@/components/design/avatar";
+import MenuOverlay from "@/components/design/menu-overlay";
 
 export default function DesignSystem() {
   return (
@@ -45,6 +46,9 @@ export default function DesignSystem() {
         <Avatar />
         <Avatar variant="outline" />
         <Avatar variant="yellow-bg" />
+      </section>
+      <section>
+        <MenuOverlay food="Sandwich" host="Jenny" distance="1" />
       </section>
     </div>
   );
