@@ -9,8 +9,18 @@ import MenuOverlay from "@/components/design/menu-overlay";
 import SandwichIcon from "@/components/icons/SandwichIcon";
 import AccentCard from "@/components/design/accent-card";
 import SoupIcon from "@/components/icons/SoupIcon";
+import RamenIcon from "@/components/icons/RamenIcon";
+import SushiIcon from "@/components/icons/SushiIcon";
+import SaladIcon from "@/components/icons/SaladIcon";
+import MenuItem from "@/components/design/menu-item";
 
 export default function DesignSystem() {
+  const menuItems = [
+    { food: "Sandwich", icon: <SandwichIcon /> },
+    { food: "Ramen", icon: <RamenIcon /> },
+    { food: "Sushi", icon: <SushiIcon /> },
+    { food: "Salad", icon: <SaladIcon /> },
+  ];
   return (
     <div className="mx-auto max-w-sm space-y-10 bg-gray-200 p-5">
       {/* Button section */}
@@ -66,6 +76,13 @@ export default function DesignSystem() {
           title="Fresh Tomato Soup"
           description="Jenny | Reserve By 3pm "
         />
+      </section>
+      <section>
+        <div className="flex gap-5">
+          {menuItems.map((item) => (
+            <MenuItem key={item.food} {...item} />
+          ))}
+        </div>
       </section>
     </div>
   );
