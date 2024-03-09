@@ -17,17 +17,17 @@ export default function ProfilePage() {
   ];
 
   return (
-    <div className="relative mx-auto mt-14 max-w-sm space-y-10">
-      <div className=" absolute -top-40 right-1/2 -z-10 h-[272.36px] w-[496px] translate-x-1/2 overflow-hidden rounded-[50%] bg-secondary"></div>
-      <div className="mt-4 flex items-center justify-between">
+    <div className="relative mx-auto max-w-sm space-y-10">
+      <div className="absolute -top-40 right-1/2 -z-10 h-[272.36px] w-[384px] translate-x-1/2 overflow-hidden bg-secondary"></div>
+      <div className="mt-4 flex items-center justify-between p-5">
         <div className="flex flex-col">
           <Headline className="mb-1">Sofia H.</Headline>
           <p className="text-sm font-medium text-accent">UID #A00000001</p>
         </div>
         <Avatar />
       </div>
-      <div>
-        <div className="mb-6 mt-20 flex items-center justify-between">
+      <div className="px-4">
+        <div className="mb-6 flex items-center justify-between">
           <div className="inline-flex h-6 w-[215px] items-center justify-start">
             <h1 className="h-6 text-xl font-bold text-black">My Allergies</h1>
           </div>
@@ -38,7 +38,7 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        <section className=" flex gap-6">
+        <section className=" flex flex-wrap gap-6">
           {allergies.map((allergy) => (
             <MenuItem
               key={allergy.food}
