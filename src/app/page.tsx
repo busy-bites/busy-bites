@@ -1,4 +1,5 @@
 import AccentCard from "@/components/design/accent-card";
+import MapPreview from "@/components/design/map-preview";
 import MenuItem from "@/components/design/menu-item";
 import { Headline, Title } from "@/components/design/typography";
 import RamenIcon from "@/components/icons/RamenIcon";
@@ -34,6 +35,11 @@ export default function Home() {
             <MenuItem key={item.food} {...item} />
           ))}
         </div>
+      </section>
+
+      <section className="mt-6">
+        <Title>Hosts Near Me</Title>
+        <MapPreview />
       </section>
     </main>
   );
