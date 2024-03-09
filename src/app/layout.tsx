@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Navbar from "@/components/design/navbar";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -17,8 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("relative antialiased", nunito.className)}>
-        <main className="min-h-dvh">{children}</main>
+      <body
+        className={cn("relative bg-[#FFFDFB] antialiased", nunito.className)}
+      >
+        <main className="mx-auto min-h-dvh max-w-md">{children}</main>
+        <Navbar />
       </body>
     </html>
   );

@@ -17,7 +17,7 @@ const menuItems = [
 
 export default function Home() {
   return (
-    <main className="mx-auto min-h-dvh max-w-md bg-[#FFFDFB] px-4 pt-14">
+    <div className="px-4 pt-14">
       <Headline> Good Appetite, Sofia</Headline>
       <section>
         <Title>Today&apos;s Special</Title>
@@ -27,7 +27,6 @@ export default function Home() {
           description="Jenny | Reserve By 3pm "
         />
       </section>
-
       <section className="mt-6">
         <Title>Today&apos;s Menu</Title>
         <div className="flex gap-5">
@@ -36,11 +35,10 @@ export default function Home() {
           ))}
         </div>
       </section>
-
       <section className="mt-6">
         <Title>Hosts Near Me</Title>
         <MapPreview />
       </section>
-    </main>
+    </div>
   );
 }
