@@ -1,7 +1,7 @@
 import MilkIcon from "@/components/icons/MilkIcon";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Home, Map, ShoppingCart, Smile } from "lucide-react";
+import { Home, Map, Plus, ShoppingCart, Smile } from "lucide-react";
 import Link from "next/link";
 
 export default function DesignSystem() {
@@ -33,7 +33,33 @@ export default function DesignSystem() {
           <MilkIcon />
         </FoodButton>
       </section>
+      {/* Add section */}
+      <section className="flex gap-5">
+        <AddButton />
+        <AddButton variant="other" />
+      </section>
     </div>
+  );
+}
+
+function AddButton({ variant = "default" }: { variant?: "default" | "other" }) {
+  return (
+    <button
+      className={cn(
+        "group flex h-[74px] w-[74px] items-center justify-center rounded-full",
+        {
+          "bg-primary": variant === "default",
+          "bg-accent": variant === "other",
+        },
+      )}
+    >
+      <Plus
+        className={cn({
+          "stroke-secondary": variant === "default",
+          "stroke-primary": variant === "other",
+        })}
+      />
+    </button>
   );
 }
 
