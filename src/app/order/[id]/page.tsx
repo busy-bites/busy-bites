@@ -7,6 +7,8 @@ import TomatoIcon from "@/components/icons/TomatoIcon";
 import { Button } from "@/components/ui/button";
 
 import { menu } from "@/data/data";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 const orders = [
@@ -18,9 +20,12 @@ const orders = [
 
 export default function OrderPage({
   params: { id },
+  searchParams,
 }: {
   params: { id: string };
+  searchParams: { status: "confirmed" | "preparing" | "ready" };
 }) {
+  const { status } = searchParams;
   const order = orders.find((order) => order.id === +id);
   if (!order) return notFound();
 
@@ -29,9 +34,15 @@ export default function OrderPage({
 
   return (
     <div>
-      <DynamicIsland variant="gradient">
+      <DynamicIsland variant={status === "ready" ? "default" : "gradient"}>
         <div className="mt-5 flex w-full flex-col items-center">
-          <Headline className="mb-1">Order Confimed!</Headline>
+          <Headline className="mb-1">
+            {status === "confirmed"
+              ? "Order Confimed!"
+              : status === "preparing"
+                ? "Preparing your food"
+                : "Ready for Pick Up!"}
+          </Headline>
           <span className="text-gray-600">
             Estimated Pick up time is <span className="font-bold">3:30 pm</span>
           </span>
@@ -50,22 +61,42 @@ export default function OrderPage({
             <ThumbsUpRIcon width={46} height={46} />
             <span>Confirmed</span>
           </div>
-          <div className="flex h-[111px] w-[111px] flex-col items-center justify-center rounded-full bg-[#FFE1A7]">
+          <div
+            className={cn(
+              "flex h-[111px] w-[111px] flex-col items-center justify-center rounded-full",
+              {
+                "bg-[#FFE1A7]": status === "confirmed",
+                "bg-secondary": status !== "confirmed",
+              },
+            )}
+          >
             <TomatoIcon width={46} height={46} />
             <span>Preparing</span>
           </div>
-          <div className="flex h-[111px] w-[111px] flex-col items-center justify-center rounded-full bg-[#FFE1A7]">
+          <div
+            className={cn(
+              "flex h-[111px] w-[111px] flex-col items-center justify-center rounded-full",
+              {
+                "bg-secondary": status === "ready",
+                "bg-[#FFE1A7]": status !== "ready",
+              },
+            )}
+          >
             <ClockIcon width={46} height={46} />
             <span>Confimed</span>
           </div>
         </div>
-        <div className="mt-20 flex gap-2 px-2">
-          <Button variant="outline" className="w-full">
-            Pick Up Location
-          </Button>
-          <Button variant="outline" className="w-full">
-            Chat with Host
-          </Button>
+        <div className="mt-20 grid grid-cols-2 gap-2 px-2">
+          <Link href="/map">
+            <Button variant="outline" className="w-full">
+              Pick Up Location
+            </Button>
+          </Link>
+          <Link href="/chat">
+            <Button variant="outline" className="w-full">
+              Chat with Host
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
