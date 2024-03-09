@@ -1,18 +1,11 @@
-import Avatar from "@/components/design/avatar";
 import DynamicIsland from "@/components/design/dynamic-island";
 import { Headline } from "@/components/design/typography";
+import ClockIcon from "@/components/icons/ClockIcon";
+import ThumbsUpRIcon from "@/components/icons/ThumbsUpRIcon";
+import TomatoIcon from "@/components/icons/TomatoIcon";
 
 import { Button } from "@/components/ui/button";
 
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { menu } from "@/data/data";
 import { notFound } from "next/navigation";
 
@@ -36,10 +29,12 @@ export default function OrderPage({
 
   return (
     <div>
-      <DynamicIsland>
+      <DynamicIsland variant="gradient">
         <div className="mt-5 flex w-full flex-col items-center">
-          <Headline className="mb-1">Today&apos;s Special</Headline>
-          <span className="text-gray-600">Host: Jenny | 1 km away</span>
+          <Headline className="mb-1">Order Confimed!</Headline>
+          <span className="text-gray-600">
+            Estimated Pick up time is <span className="font-bold">3:30 pm</span>
+          </span>
           {menuItem.icon}
           <p className="text-xl font-bold">{menuItem.food}</p>
           <div className="mt-2 text-sm">
@@ -48,40 +43,29 @@ export default function OrderPage({
           </div>
         </div>
       </DynamicIsland>
-      <section className="mt-20">
-        <div className="my-10 flex flex-1 items-end gap-2 px-2">
-          <Avatar />
-          <div className="rounded-3xl border border-secondary bg-accent px-2 py-4">
-            <p className="p-2 text-sm font-semibold">{menuItem.description}</p>
+      <section className="mt-20 px-2">
+        <div className="relative my-10 flex flex-1 justify-between gap-2">
+          <div className="absolute top-1/2 -z-10 h-1 w-full translate-y-1/2 bg-[#FFE1A7]"></div>
+          <div className=" flex h-[111px] w-[111px] flex-col items-center justify-center rounded-full bg-secondary">
+            <ThumbsUpRIcon width={46} height={46} />
+            <span>Confirmed</span>
+          </div>
+          <div className="flex h-[111px] w-[111px] flex-col items-center justify-center rounded-full bg-[#FFE1A7]">
+            <TomatoIcon width={46} height={46} />
+            <span>Preparing</span>
+          </div>
+          <div className="flex h-[111px] w-[111px] flex-col items-center justify-center rounded-full bg-[#FFE1A7]">
+            <ClockIcon width={46} height={46} />
+            <span>Confimed</span>
           </div>
         </div>
-        <div className="mt-20 px-2">
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button variant="secondary" className="w-full">
-                Reserve
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-md border-0 bg-secondary">
-              <DialogHeader className="mx-auto max-w-xs">
-                <div className=" mx-auto w-fit rounded-3xl bg-accent drop-shadow-md">
-                  {menuItem.reserveIcon}
-                </div>
-                <div className="py-5">
-                  <DialogTitle className="text-center text-xl font-bold">
-                    You have successfully reserved your meal!
-                  </DialogTitle>
-                  <DialogDescription className="text-md text-center text-gray-600">
-                    Estimate Pick Up Time is
-                    <span className="font-bold text-gray-800"> 3:30 pm</span>
-                  </DialogDescription>
-                </div>
-              </DialogHeader>
-              <DialogFooter className="sm:justify-center">
-                <Button className="bg-accent">Check My Meal</Button>
-              </DialogFooter>
-            </DialogContent>
-          </Dialog>
+        <div className="mt-20 flex gap-2 px-2">
+          <Button variant="outline" className="w-full">
+            Pick Up Location
+          </Button>
+          <Button variant="outline" className="w-full">
+            Chat with Host
+          </Button>
         </div>
       </section>
     </div>
