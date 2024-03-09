@@ -7,6 +7,8 @@ import { Headline, Title } from "@/components/design/typography";
 import Avatar from "@/components/design/avatar";
 import MenuOverlay from "@/components/design/menu-overlay";
 import SandwichIcon from "@/components/icons/SandwichIcon";
+import AccentCard from "@/components/design/accent-card";
+import SoupIcon from "@/components/icons/SoupIcon";
 
 export default function DesignSystem() {
   return (
@@ -48,6 +50,7 @@ export default function DesignSystem() {
         <Avatar variant="outline" />
         <Avatar variant="yellow-bg" />
       </section>
+      {/* Menu overlay section */}
       <section>
         <MenuOverlay
           image={<SandwichIcon />}
@@ -56,29 +59,14 @@ export default function DesignSystem() {
           distance="1"
         />
       </section>
+      {/* Accent card section */}
       <section>
         <AccentCard
+          image={<SoupIcon width={147.8} height={101.63} />}
           title="Fresh Tomato Soup"
           description="Jenny | Reserve By 3pm "
         />
       </section>
     </div>
-  );
-}
-
-function AccentCard({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) {
-  return (
-    <article className="rounded-3xl bg-accent p-4">
-      <div>
-        <h3 className="text-lg font-semibold">{title}</h3>
-        <p className="text-xs font-semibold">{description}</p>
-      </div>
-    </article>
   );
 }
