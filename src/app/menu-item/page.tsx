@@ -4,6 +4,16 @@ import { Headline } from "@/components/design/typography";
 import SoupIcon from "@/components/icons/SoupIcon";
 import { Button } from "@/components/ui/button";
 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 export default function MenuItemPage() {
   return (
     <div>
@@ -30,7 +40,32 @@ export default function MenuItemPage() {
           </div>
         </div>
         <div className="mt-20 px-2">
-          <Button className="w-full">Reserve</Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="secondary" className="w-full">
+                Reserve
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-md border-0 bg-secondary">
+              <div className="absolute -top-10 left-12 mx-auto w-fit translate-x-1/2 rounded-3xl bg-accent drop-shadow-md">
+                <SoupIcon width={173.14} height={119.7} />
+              </div>
+              <DialogHeader className="mx-auto mt-20 max-w-xs">
+                <div className="py-5">
+                  <DialogTitle className="text-center text-xl font-bold">
+                    You have successfully reserved your meal!
+                  </DialogTitle>
+                  <DialogDescription className="text-md text-center text-gray-600">
+                    Estimate Pick Up Time is
+                    <span className="font-bold text-gray-800"> 3:30 pm</span>
+                  </DialogDescription>
+                </div>
+              </DialogHeader>
+              <DialogFooter className="sm:justify-center">
+                <Button className="bg-accent">Check My Meal</Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
         </div>
       </section>
     </div>
