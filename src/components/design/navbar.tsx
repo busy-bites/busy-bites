@@ -18,7 +18,7 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
-          <Link href="/cart">
+          <Link href="/order">
             <ShoppingCart className="stroke-gray-500 hover:stroke-black" />
           </Link>
         </li>

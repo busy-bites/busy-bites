@@ -31,6 +31,7 @@ export default function OrderPage({
 }) {
   const { status } = searchParams;
   const { replace } = useRouter();
+
   if (!status) {
     notFound();
   }
