@@ -13,6 +13,12 @@ import RamenIcon from "@/components/icons/RamenIcon";
 import SushiIcon from "@/components/icons/SushiIcon";
 import SaladIcon from "@/components/icons/SaladIcon";
 import MenuItem from "@/components/design/menu-item";
+import EggIcon from "@/components/icons/EggIcon";
+import GlutenIcon from "@/components/icons/GlutenIcon";
+import { Coinbar } from "@/components/design/coinbar";
+
+import Image from "next/image";
+import MapPreview from "@/components/design/map-preview";
 
 export default function DesignSystem() {
   const menuItems = [
@@ -21,8 +27,14 @@ export default function DesignSystem() {
     { food: "Sushi", icon: <SushiIcon /> },
     { food: "Salad", icon: <SaladIcon /> },
   ];
+
+  const allergies = [
+    { food: "Milk", icon: <MilkIcon /> },
+    { food: "Egg", icon: <EggIcon /> },
+    { food: "Gluten", icon: <GlutenIcon /> },
+  ];
   return (
-    <div className="mx-auto max-w-sm space-y-10 bg-gray-200 p-5">
+    <div className="mx-auto max-w-md space-y-10 bg-gray-100 p-5">
       {/* Button section */}
       <section className="flex gap-5">
         <Button>Button CTA</Button>
@@ -77,12 +89,26 @@ export default function DesignSystem() {
           description="Jenny | Reserve By 3pm "
         />
       </section>
+      {/* Menu item section */}
       <section>
-        <div className="flex gap-5">
+        <div className="flex gap-6">
           {menuItems.map((item) => (
             <MenuItem key={item.food} {...item} />
           ))}
         </div>
+      </section>
+      {/* Allergies item section */}
+      <section className="flex gap-6">
+        {allergies.map((item) => (
+          <MenuItem key={item.food} {...item} />
+        ))}
+      </section>
+      {/* Coinbar section */}
+      <section>
+        <Coinbar />
+      </section>
+      <section>
+        <MapPreview />
       </section>
     </div>
   );
