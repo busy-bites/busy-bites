@@ -38,7 +38,35 @@ export default function DesignSystem() {
         <AddButton />
         <AddButton variant="other" />
       </section>
+      {/* Avatar section */}
+      <section className="flex gap-5">
+        <Avatar />
+        <Avatar variant="outline" />
+        <Avatar variant="yellow-bg" />
+      </section>
     </div>
+  );
+}
+
+import Image from "next/image";
+
+function Avatar({
+  variant = "default",
+}: {
+  variant?: "default" | "yellow-bg" | "outline";
+}) {
+  return (
+    <Image
+      src="/avatar.png"
+      alt="Sofia"
+      quality={100}
+      width={62}
+      height={62}
+      className={cn({
+        "rounded-lg border-2 border-accent": variant === "outline",
+        "rounded-xl bg-[#FFBE41]": variant === "yellow-bg",
+      })}
+    />
   );
 }
 
