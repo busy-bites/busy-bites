@@ -13,6 +13,8 @@ import RamenIcon from "@/components/icons/RamenIcon";
 import SushiIcon from "@/components/icons/SushiIcon";
 import SaladIcon from "@/components/icons/SaladIcon";
 import MenuItem from "@/components/design/menu-item";
+import EggIcon from "@/components/icons/EggIcon";
+import GlutenIcon from "@/components/icons/GlutenIcon";
 
 export default function DesignSystem() {
   const menuItems = [
@@ -21,8 +23,15 @@ export default function DesignSystem() {
     { food: "Sushi", icon: <SushiIcon /> },
     { food: "Salad", icon: <SaladIcon /> },
   ];
+
+  const allergies = [
+    { food: "Milk", icon: <MilkIcon /> },
+    { food: "Egg", icon: <EggIcon /> },
+    { food: "Gluten", icon: <GlutenIcon /> },
+    { food: "Add More", icon: <AddButton /> },
+  ];
   return (
-    <div className="mx-auto max-w-sm space-y-10 bg-gray-200 p-5">
+    <div className="mx-auto max-w-md space-y-10 bg-gray-200 p-5">
       {/* Button section */}
       <section className="flex gap-5">
         <Button>Button CTA</Button>
@@ -78,11 +87,16 @@ export default function DesignSystem() {
         />
       </section>
       <section>
-        <div className="flex gap-5">
+        <div className="flex gap-6">
           {menuItems.map((item) => (
             <MenuItem key={item.food} {...item} />
           ))}
         </div>
+      </section>
+      <section className="flex gap-6">
+        {allergies.map((item) => (
+          <MenuItem key={item.food} {...item} />
+        ))}
       </section>
     </div>
   );
