@@ -1,12 +1,12 @@
+import AccentCard from "@/components/design/accent-card";
 import AddButton from "@/components/design/add-button";
 import Avatar from "@/components/design/avatar";
-import { FoodItem } from "@/components/design/food";
 import MenuItem from "@/components/design/menu-item";
 import { Headline } from "@/components/design/typography";
 import EggIcon from "@/components/icons/EggIcon";
 import GlutenIcon from "@/components/icons/GlutenIcon";
 import MilkIcon from "@/components/icons/MilkIcon";
-import Image from "next/image";
+import SoupIcon from "@/components/icons/SoupIcon";
 
 export default function ProfilePage() {
   const allergies = [
@@ -56,6 +56,15 @@ export default function ProfilePage() {
               How This Works
             </p>
           </div>
+        </section>
+
+        {/* AccentCard Section */}
+        <section className="mt-10">
+          <AccentCard
+            image={<SoupIcon width={147.8} height={101.63} />}
+            title="Send Thanks to Chief"
+            description="Recent Meal by Jenny"
+          />
         </section>
       </div>
     </div>
