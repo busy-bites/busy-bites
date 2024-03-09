@@ -1,4 +1,6 @@
+import MilkIcon from "@/components/icons/MilkIcon";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { Home, Map, ShoppingCart, Smile } from "lucide-react";
 import Link from "next/link";
 
@@ -19,7 +21,53 @@ export default function DesignSystem() {
       <section className="flex gap-5">
         <Navbar />
       </section>
+      {/* Food section */}
+      <section className="flex gap-5">
+        <FoodItem>
+          <MilkIcon />
+        </FoodItem>
+        <FoodButton>
+          <MilkIcon className="transition-opacity group-hover:opacity-30" />
+        </FoodButton>
+        <FoodButton variant="outline">
+          <MilkIcon />
+        </FoodButton>
+      </section>
     </div>
+  );
+}
+
+function FoodItem({ children }: { children: React.ReactNode }) {
+  return (
+    <button className="group flex h-[74px] w-[74px] items-center justify-center rounded-full bg-primary">
+      {children}
+    </button>
+  );
+}
+
+function FoodButton({
+  children,
+  variant = "default",
+}: {
+  children: React.ReactNode;
+  variant?: "default" | "outline";
+}) {
+  return (
+    <button
+      className={cn({
+        "flex h-[74px] w-[74px] items-center justify-center rounded-full bg-accent transition-all hover:ring-[3px] hover:ring-orange-600":
+          variant === "outline",
+        "group flex h-[74px] w-[74px] items-center justify-center rounded-full bg-primary transition-colors":
+          variant === "default",
+      })}
+    >
+      {children}
+      {variant === "default" && (
+        <span className="absolute text-sm font-bold opacity-0 transition-opacity group-hover:opacity-100">
+          Remove
+        </span>
+      )}
+    </button>
   );
 }
 
