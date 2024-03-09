@@ -17,6 +17,9 @@ import EggIcon from "@/components/icons/EggIcon";
 import GlutenIcon from "@/components/icons/GlutenIcon";
 import { Coinbar } from "@/components/design/coinbar";
 
+import Image from "next/image";
+import MapPreview from "@/components/design/map-preview";
+
 export default function DesignSystem() {
   const menuItems = [
     { food: "Sandwich", icon: <SandwichIcon /> },
@@ -100,8 +103,12 @@ export default function DesignSystem() {
           <MenuItem key={item.food} {...item} />
         ))}
       </section>
+      {/* Coinbar section */}
       <section>
         <Coinbar />
+      </section>
+      <section>
+        <MapPreview />
       </section>
     </div>
   );
