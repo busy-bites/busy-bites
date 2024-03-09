@@ -4,7 +4,7 @@ export default function MilkIcon({ className }: { className?: string }) {
   return (
     <Image
       className={className}
-      src="/milk.svg"
+      src="/fish.svg"
       alt="Milk"
       width={55}
       height={55}
