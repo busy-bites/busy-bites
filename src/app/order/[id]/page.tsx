@@ -16,13 +16,24 @@ import {
 import { menu } from "@/data/data";
 import { notFound } from "next/navigation";
 
-export default function MenuItemPage({
+const orders = [
+  {
+    id: 1,
+    food: "soup",
+  },
+];
+
+export default function OrderPage({
   params: { id },
 }: {
   params: { id: string };
 }) {
-  const menuItem = menu.find((item) => item.id === id);
+  const order = orders.find((order) => order.id === +id);
+  if (!order) return notFound();
+
+  const menuItem = menu.find((item) => item.id === order.food);
   if (!menuItem) return notFound();
+
   return (
     <div>
       <DynamicIsland>
