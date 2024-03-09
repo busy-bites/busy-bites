@@ -2,6 +2,7 @@ import AccentCard from "@/components/design/accent-card";
 import AddButton from "@/components/design/add-button";
 import Avatar from "@/components/design/avatar";
 import { Coinbar } from "@/components/design/coinbar";
+import DynamicIsland from "@/components/design/dynamic-island";
 import MenuItem from "@/components/design/menu-item";
 import { Headline } from "@/components/design/typography";
 import EggIcon from "@/components/icons/EggIcon";
@@ -17,15 +18,14 @@ export default function ProfilePage() {
   ];
 
   return (
-    <div className="relative mx-auto max-w-sm space-y-10">
-      <div className="absolute -top-40 right-1/2 -z-10 h-[272.36px] w-[384px] translate-x-1/2 overflow-hidden bg-secondary"></div>
-      <div className="mt-4 flex items-center justify-between p-5">
+    <div className="mx-auto max-w-sm space-y-10">
+      <DynamicIsland>
         <div className="flex flex-col">
           <Headline className="mb-1">Sofia H.</Headline>
           <p className="text-sm font-medium text-accent">UID #A00000001</p>
         </div>
         <Avatar />
-      </div>
+      </DynamicIsland>
       <div className="px-4">
         <div className="mb-6 flex items-center justify-between">
           <div className="inline-flex h-6 w-[215px] items-center justify-start">
