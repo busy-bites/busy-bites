@@ -18,7 +18,7 @@ export default function AddButton({
     >
       <Plus
         className={cn({
-          "stroke-secondary": variant === "default",
+          "stroke-accent": variant === "default",
           "stroke-primary": variant === "other",
         })}
       />

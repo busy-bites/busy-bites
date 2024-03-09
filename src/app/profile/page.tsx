@@ -1,12 +1,20 @@
 import AddButton from "@/components/design/add-button";
 import Avatar from "@/components/design/avatar";
 import { FoodItem } from "@/components/design/food";
+import MenuItem from "@/components/design/menu-item";
 import { Headline } from "@/components/design/typography";
+import EggIcon from "@/components/icons/EggIcon";
+import GlutenIcon from "@/components/icons/GlutenIcon";
 import MilkIcon from "@/components/icons/MilkIcon";
 import Image from "next/image";
 
 export default function ProfilePage() {
-  const allergies = [{}];
+  const allergies = [
+    { food: "Milk", icon: <MilkIcon /> },
+    { food: "Egg", icon: <EggIcon /> },
+    { food: "Gluten", icon: <GlutenIcon /> },
+    { food: "Add More", icon: <AddButton /> },
+  ];
 
   return (
     <div className="mx-auto max-w-sm space-y-10">
@@ -28,21 +36,19 @@ export default function ProfilePage() {
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-between space-y-5">
-          <FoodItem>
-            <MilkIcon className="transition-opacity group-hover:opacity-30" />
-          </FoodItem>
-          <FoodItem>
-            <MilkIcon />
-          </FoodItem>
-          <FoodItem>
-            <MilkIcon />
-          </FoodItem>
-          <AddButton />
-        </div>
 
-        <div className="flex items-center justify-between ">
-          <div className="inline-flex h-6 w-[215px] items-center justify-start">
+        <section className=" flex gap-6">
+          {allergies.map((allergy) => (
+            <MenuItem
+              key={allergy.food}
+              food={allergy.food}
+              icon={allergy.icon}
+            />
+          ))}
+        </section>
+
+        <section className="mt-14 flex items-center justify-between">
+          <div className="flex h-6 w-[215px] items-center justify-start">
             <h1 className="h-6 text-xl font-bold text-black">Foodie Power</h1>
           </div>
           <div>
@@ -50,7 +56,7 @@ export default function ProfilePage() {
               How This Works
             </p>
           </div>
-        </div>
+        </section>
       </div>
     </div>
   );

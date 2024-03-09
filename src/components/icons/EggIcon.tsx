@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-export default function MilkIcon({ className }: { className?: string }) {
+export default function EggIcon({ className }: { className?: string }) {
   return (
     <Image
       className={className}
-      src="/milk.svg"
-      alt="Milk"
+      src="/egg.svg"
+      alt="egg"
       width={55}
       height={55}
     />
