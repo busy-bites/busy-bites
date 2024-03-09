@@ -5,6 +5,10 @@ import Navbar from "@/components/design/navbar";
 import AddButton from "@/components/design/add-button";
 import { Headline, Title } from "@/components/design/typography";
 import Avatar from "@/components/design/avatar";
+import MenuOverlay from "@/components/design/menu-overlay";
+import SandwichIcon from "@/components/icons/SandwichIcon";
+import AccentCard from "@/components/design/accent-card";
+import SoupIcon from "@/components/icons/SoupIcon";
 
 export default function DesignSystem() {
   return (
@@ -45,6 +49,23 @@ export default function DesignSystem() {
         <Avatar />
         <Avatar variant="outline" />
         <Avatar variant="yellow-bg" />
+      </section>
+      {/* Menu overlay section */}
+      <section>
+        <MenuOverlay
+          image={<SandwichIcon />}
+          food="Sandwich"
+          host="Jenny"
+          distance="1"
+        />
+      </section>
+      {/* Accent card section */}
+      <section>
+        <AccentCard
+          image={<SoupIcon width={147.8} height={101.63} />}
+          title="Fresh Tomato Soup"
+          description="Jenny | Reserve By 3pm "
+        />
       </section>
     </div>
   );
