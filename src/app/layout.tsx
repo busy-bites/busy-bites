@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("relative font-sans antialiased", nunito.className)}>
+      <body className={cn("relative antialiased", nunito.className)}>
         <main className="min-h-dvh">{children}</main>
       </body>
     </html>
