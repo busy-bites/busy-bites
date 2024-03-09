@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
@@ -16,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={nunito.className}>{children}</body>
+      <body className={cn("relative font-sans antialiased", nunito.className)}>
+        <main className="min-h-dvh">{children}</main>
+      </body>
     </html>
   );
 }
