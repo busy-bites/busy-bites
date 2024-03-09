@@ -1,3 +1,5 @@
+"use client";
+
 import DynamicIsland from "@/components/design/dynamic-island";
 import { Headline } from "@/components/design/typography";
 import ClockIcon from "@/components/icons/ClockIcon";
@@ -10,6 +12,8 @@ import { menu } from "@/data/data";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const orders = [
   {
@@ -26,6 +30,31 @@ export default function OrderPage({
   searchParams: { status: "confirmed" | "preparing" | "ready" };
 }) {
   const { status } = searchParams;
+  const { replace } = useRouter();
+  if (!status) {
+    notFound();
+  }
+  if (!["confirmed", "preparing", "ready"].includes(status)) {
+    notFound();
+  }
+
+  useEffect(() => {
+    let id: any;
+    if (status === "confirmed") {
+      id = setTimeout(() => {
+        replace("/order/1?status=preparing");
+      }, 3000);
+    }
+    if (status === "preparing") {
+      id = setTimeout(() => {
+        replace("/order/1?status=ready");
+      }, 3000);
+    }
+    return () => {
+      if (id) clearTimeout(id);
+    };
+  }, [status, replace]);
+
   const order = orders.find((order) => order.id === +id);
   if (!order) return notFound();
 
