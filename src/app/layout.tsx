@@ -19,9 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("relative antialiased", nunito.className)}>
-        <main className="mx-auto min-h-dvh max-w-md bg-[#FFFDFB] ">
-          {children}
-        </main>
+        <main className="mx-auto min-h-dvh max-w-md">{children}</main>
         <Navbar />
       </body>
     </html>

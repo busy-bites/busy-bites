@@ -7,7 +7,6 @@ import { Headline } from "@/components/design/typography";
 import EggIcon from "@/components/icons/EggIcon";
 import GlutenIcon from "@/components/icons/GlutenIcon";
 import MilkIcon from "@/components/icons/MilkIcon";
-import SoupIcon from "@/components/icons/SoupIcon";
 import ThumbsUpIcon from "@/components/icons/ThumbsUpIcon";
 
 export default function ProfilePage() {
@@ -15,25 +14,25 @@ export default function ProfilePage() {
     { food: "Milk", icon: <MilkIcon /> },
     { food: "Egg", icon: <EggIcon /> },
     { food: "Gluten", icon: <GlutenIcon /> },
-    { food: "Add More", icon: <AddButton /> },
   ];
 
   return (
-    <div className="mx-auto max-w-sm space-y-10">
-      <div className="mt-4 flex items-center justify-between space-y-5">
-        <div className="">
-          <Headline>Sofia H.</Headline>
-          <p className="text-[13px] font-medium leading-7">UID #A00000001</p>
+    <div className="relative mx-auto mt-14 max-w-sm space-y-10">
+      <div className=" absolute -top-40 right-1/2 -z-10 h-[272.36px] w-[496px] translate-x-1/2 overflow-hidden rounded-[50%] bg-secondary"></div>
+      <div className="mt-4 flex items-center justify-between">
+        <div className="flex flex-col">
+          <Headline className="mb-1">Sofia H.</Headline>
+          <p className="text-sm font-medium text-accent">UID #A00000001</p>
         </div>
         <Avatar />
       </div>
       <div>
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6 mt-20 flex items-center justify-between">
           <div className="inline-flex h-6 w-[215px] items-center justify-start">
             <h1 className="h-6 text-xl font-bold text-black">My Allergies</h1>
           </div>
           <div>
-            <p className=" text-right text-[13px] font-medium leading-7 text-gray-400 underline">
+            <p className="text-right text-[13px] font-medium leading-7 text-gray-400 underline">
               You need to Know
             </p>
           </div>
@@ -47,6 +46,10 @@ export default function ProfilePage() {
               icon={allergy.icon}
             />
           ))}
+          <div className="flex flex-col items-center gap-2">
+            <AddButton />
+            <p>Add More</p>
+          </div>
         </section>
 
         <section className="mt-14 flex items-center justify-between">
