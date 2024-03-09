@@ -19,6 +19,7 @@ import { Coinbar } from "@/components/design/coinbar";
 
 import Image from "next/image";
 import MapPreview from "@/components/design/map-preview";
+import ThumbsUpIcon from "@/components/icons/ThumbsUpIcon";
 
 export default function DesignSystem() {
   const menuItems = [
@@ -109,6 +110,9 @@ export default function DesignSystem() {
       </section>
       <section>
         <MapPreview />
+      </section>
+      <section>
+        <ThumbsUpIcon width={123.36} height={105} />
       </section>
     </div>
   );
