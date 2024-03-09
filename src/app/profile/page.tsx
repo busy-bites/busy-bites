@@ -1,12 +1,14 @@
 import AccentCard from "@/components/design/accent-card";
 import AddButton from "@/components/design/add-button";
 import Avatar from "@/components/design/avatar";
+import { Coinbar } from "@/components/design/coinbar";
 import MenuItem from "@/components/design/menu-item";
 import { Headline } from "@/components/design/typography";
 import EggIcon from "@/components/icons/EggIcon";
 import GlutenIcon from "@/components/icons/GlutenIcon";
 import MilkIcon from "@/components/icons/MilkIcon";
 import SoupIcon from "@/components/icons/SoupIcon";
+import ThumbsUpIcon from "@/components/icons/ThumbsUpIcon";
 
 export default function ProfilePage() {
   const allergies = [
@@ -26,7 +28,7 @@ export default function ProfilePage() {
         <Avatar />
       </div>
       <div>
-        <div className="flex items-center justify-between">
+        <div className="mb-6 flex items-center justify-between">
           <div className="inline-flex h-6 w-[215px] items-center justify-start">
             <h1 className="h-6 text-xl font-bold text-black">My Allergies</h1>
           </div>
@@ -61,10 +63,35 @@ export default function ProfilePage() {
         {/* AccentCard Section */}
         <section className="mt-10">
           <AccentCard
-            image={<SoupIcon width={147.8} height={101.63} />}
+            image={<ThumbsUpIcon width={147.8} height={101.63} />}
             title="Send Thanks to Chief"
             description="Recent Meal by Jenny"
           />
+        </section>
+
+        {/* Chef level section */}
+
+        <section className="mt-14 flex items-center justify-between">
+          <div className="flex h-6 w-[215px] items-center justify-start">
+            <h1 className="h-6 text-xl font-bold text-black">Chef Level</h1>
+          </div>
+          <div>
+            <p className=" text-right text-[13px] font-medium leading-7 text-gray-400 underline">
+              Reward Details
+            </p>
+          </div>
+        </section>
+
+        <div className="mt-5">
+          <p>
+            You Have <span className="text-xl font-bold">3</span> coins
+            available!
+          </p>
+        </div>
+
+        {/* coin bar section */}
+        <section className="mt-5">
+          <Coinbar />
         </section>
       </div>
     </div>
