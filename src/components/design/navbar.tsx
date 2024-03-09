@@ -6,24 +6,24 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <nav className="fixed bottom-0  z-10 w-full justify-center">
-      <ul className="mx-auto flex w-full max-w-md justify-evenly gap-5 bg-[#FFFDFB] py-4">
+      <ul className="mx-auto flex w-full max-w-md justify-evenly gap-5 border-t bg-[#FFFDFB] py-4">
         <li>
-          <Link href="#">
+          <Link href="/">
             <Home className="stroke-gray-500 hover:stroke-black" />
           </Link>
         </li>
         <li>
-          <Link href="#">
+          <Link href="/map">
             <Map className="stroke-gray-500 hover:stroke-black" />
           </Link>
         </li>
         <li>
-          <Link href="#">
+          <Link href="/cart">
             <ShoppingCart className="stroke-gray-500 hover:stroke-black" />
           </Link>
         </li>
         <li>
-          <Link href="#">
+          <Link href="/profile">
             <Smile className="stroke-gray-500 hover:stroke-black" />
           </Link>
         </li>
