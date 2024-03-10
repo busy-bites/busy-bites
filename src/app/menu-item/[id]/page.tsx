@@ -76,8 +76,11 @@ export default function MenuItemPage({
                 </div>
               </DialogHeader>
               <DialogFooter className="sm:justify-center">
-                <Link href={`/order/${menuItem.id}?status=confirmed`}>
-                  <Button className="bg-accent">Check My Meal</Button>
+                <Link
+                  href={`/order/${menuItem.id}?status=confirmed`}
+                  className="w-full"
+                >
+                  <Button className="w-full bg-accent">Check My Meal</Button>
                 </Link>
               </DialogFooter>
             </DialogContent>
