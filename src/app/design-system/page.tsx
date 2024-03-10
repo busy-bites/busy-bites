@@ -22,6 +22,8 @@ import ThumbsUpIcon from "@/components/icons/ThumbsUpIcon";
 import MapOverlay from "@/components/design/map-overlay";
 import CoffeeCupIcon from "@/components/icons/CoffeeCupIcon";
 import CoinIcon from "@/components/icons/CoinIcon";
+import { rewards } from "@/data/data";
+import RewardItem from "@/components/design/reward-item";
 
 export default function DesignSystem() {
   const menuItems = [
@@ -129,57 +131,9 @@ export default function DesignSystem() {
         <ThumbsUpIcon width={123.36} height={105} />
       </section>
       <section className="grid grid-cols-2 gap-2">
-        <RewardsItem reward={rewards[0]} />
-        <RewardsItem reward={rewards[1]} />
+        <RewardItem reward={rewards[0]} />
+        <RewardItem reward={rewards[1]} />
       </section>
     </div>
-  );
-}
-
-import {
-  Dialog,
-  DialogContent,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { rewards } from "@/data/data";
-
-type Reward = {
-  id: string;
-  icon: JSX.Element;
-  title: string;
-  description: string;
-};
-
-function RewardsItem({ reward }: { reward: Reward }) {
-  return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <div className="w-full cursor-pointer rounded-3xl bg-accent drop-shadow-md">
-          {reward.icon}
-          <div className="flex items-end justify-center gap-2 pb-2">
-            <CoinIcon width={30} height={30} />
-            <span>5</span>
-          </div>
-        </div>
-      </DialogTrigger>
-      <DialogContent className="border-0 bg-secondary sm:max-w-[425px]">
-        <DialogHeader className="text-center">
-          <div className="mx-auto mb-10 w-fit rounded-3xl bg-accent drop-shadow-md">
-            {reward.icon}
-          </div>
-          <DialogTitle className="text-center">{reward.title}</DialogTitle>
-          <p className="pt-4">{reward.description}</p>
-          <p>Thank you for your great culinary skills!</p>
-        </DialogHeader>
-        <DialogFooter className="pt-10 sm:justify-center">
-          <Button type="submit" className="w-full bg-white drop-shadow-sm">
-            Redeem
-          </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
   );
 }
