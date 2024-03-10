@@ -1,24 +1,16 @@
 "use client";
 
-import { icon } from "leaflet";
-import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { MapOverlayCarousel } from "./map-overlay-carousel";
 import SandwichIcon from "@/components/icons/SandwichIcon";
 import SoupIcon from "@/components/icons/SoupIcon";
 import RamenIcon from "@/components/icons/RamenIcon";
+import dynamic from "next/dynamic";
 
-const ICON = icon({
-  iconUrl: "/marker.png",
-  iconSize: [32, 32],
-});
-
-const PIN = icon({
-  iconUrl: "/pin.png",
-  iconSize: [60, 60],
-  iconAnchor: [18, 51],
+const MapComponent = dynamic(() => import("./map"), {
+  ssr: false,
 });
 
 export type MenuItem = {
@@ -65,7 +57,6 @@ const menuItems: MenuItem[] = [
 ];
 
 export default function MapPage() {
-  const [isMounted, setIsMounted] = useState(false);
   const mapRef = useRef(null);
   const latitude = menuItems[0].coordinates.lat;
   const longitude = menuItems[0].coordinates.lng;
@@ -75,42 +66,21 @@ export default function MapPage() {
   });
   const [selectedMenuItem, setSelectedMenuItem] = useState(0);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   return (
     <div className="relative">
-      {isMounted && window && typeof window !== undefined && (
-        <>
-          <MapContainer
-            center={[latitude, longitude]}
-            zoom={17}
-            ref={mapRef}
-            style={{
-              height: "calc(100dvh - 56px)",
-              width: "100%",
-              zIndex: 0,
-            }}
-          >
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            {menuItems.map((item, index) => (
-              <Marker
-                key={index}
-                position={item.coordinates}
-                icon={ICON}
-              ></Marker>
-            ))}
-            <Marker position={currentPinLocation} icon={PIN}></Marker>
-          </MapContainer>
-          <MapOverlayCarousel
-            mapOverlayItems={menuItems}
-            setCurrentPinLocation={setCurrentPinLocation}
-            selectedMenuItem={selectedMenuItem}
-            setSelectedMenuItem={setSelectedMenuItem}
-          />
-        </>
-      )}
+      <MapComponent
+        latitude={latitude}
+        longitude={longitude}
+        mapRef={mapRef}
+        menuItems={menuItems}
+        currentPinLocation={currentPinLocation}
+      />
+      <MapOverlayCarousel
+        mapOverlayItems={menuItems}
+        setCurrentPinLocation={setCurrentPinLocation}
+        selectedMenuItem={selectedMenuItem}
+        setSelectedMenuItem={setSelectedMenuItem}
+      />
     </div>
   );
 }
