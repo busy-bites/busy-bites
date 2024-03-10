@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   title: "Busy Bites",
   description:
-    "Busy Bites is a food connection app designed to help students create healthy meal plans, even with busy schedules and limited cooking experience.",
+    "For busy students pressed for time, our innovative web app connects you with individuals who'll craft wholesome meals just steps away from your campus.",
   themeColor: "#FFBE41",
 };
 

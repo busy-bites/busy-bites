@@ -1,7 +1,5 @@
 "use client";
 
-import { icon } from "leaflet";
-import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
 import { useRef, useState } from "react";
@@ -9,16 +7,10 @@ import { MapOverlayCarousel } from "./map-overlay-carousel";
 import SandwichIcon from "@/components/icons/SandwichIcon";
 import SoupIcon from "@/components/icons/SoupIcon";
 import RamenIcon from "@/components/icons/RamenIcon";
+import dynamic from "next/dynamic";
 
-const ICON = icon({
-  iconUrl: "/marker.png",
-  iconSize: [32, 32],
-});
-
-const PIN = icon({
-  iconUrl: "/pin.png",
-  iconSize: [60, 60],
-  iconAnchor: [18, 51],
+const MapComponent = dynamic(() => import("./map"), {
+  ssr: false,
 });
 
 export type MenuItem = {
@@ -76,22 +68,13 @@ export default function MapPage() {
 
   return (
     <div className="relative">
-      <MapContainer
-        center={[latitude, longitude]}
-        zoom={17}
-        ref={mapRef}
-        style={{
-          height: "calc(100dvh - 56px)",
-          width: "100%",
-          zIndex: 0,
-        }}
-      >
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        {menuItems.map((item, index) => (
-          <Marker key={index} position={item.coordinates} icon={ICON}></Marker>
-        ))}
-        <Marker position={currentPinLocation} icon={PIN}></Marker>
-      </MapContainer>
+      <MapComponent
+        latitude={latitude}
+        longitude={longitude}
+        mapRef={mapRef}
+        menuItems={menuItems}
+        currentPinLocation={currentPinLocation}
+      />
       <MapOverlayCarousel
         mapOverlayItems={menuItems}
         setCurrentPinLocation={setCurrentPinLocation}
