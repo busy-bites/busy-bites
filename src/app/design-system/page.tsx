@@ -87,6 +87,7 @@ export default function DesignSystem() {
       {/* Map overlay section */}
       <section>
         <MapOverlay
+          selected={true}
           amount="5"
           image={<SandwichIcon width={57.5} height={57.5} />}
           food="Ramen"
