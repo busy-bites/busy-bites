@@ -1,4 +1,11 @@
 {
+  "name": "BusyBites",
+  "description": "A simple PWA for BusyBites",
+  "theme_color": "#FFBE41",
+  "background_color": "#FFFDFB",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "windows11/SmallTile.scale-100.png",
