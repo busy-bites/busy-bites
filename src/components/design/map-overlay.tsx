@@ -1,4 +1,5 @@
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export default function MapOverlay({
   food,
@@ -7,6 +8,7 @@ export default function MapOverlay({
   distance,
   image,
   time,
+  link,
 }: {
   image: React.ReactNode;
   food: string;
@@ -14,6 +16,7 @@ export default function MapOverlay({
   amount: string;
   distance: string;
   time: string;
+  link: string;
 }) {
   return (
     <div className="flex w-fit items-start gap-6 rounded-3xl bg-secondary px-4 py-4">
@@ -31,7 +34,9 @@ export default function MapOverlay({
           Reserve before <span className="font-bold">{time}</span>
         </p>
         <div className="mt-4">
-          <Button variant="outline">Reserve it now</Button>
+          <Link href={link}>
+            <Button variant="outline">Reserve it now</Button>
+          </Link>
         </div>
       </div>
     </div>

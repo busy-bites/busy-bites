@@ -93,6 +93,7 @@ export default function DesignSystem() {
           host="Jenny"
           distance="1"
           time="3pm"
+          link="#"
         />
       </section>
 
