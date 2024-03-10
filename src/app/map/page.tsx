@@ -8,6 +8,7 @@ import { useRef, useState } from "react";
 import { MapOverlayCarousel } from "./map-overlay-carousel";
 import SandwichIcon from "@/components/icons/SandwichIcon";
 import SoupIcon from "@/components/icons/SoupIcon";
+import RamenIcon from "@/components/icons/RamenIcon";
 
 const ICON = icon({
   iconUrl: "/marker.png",
@@ -51,16 +52,16 @@ const menuItems: MenuItem[] = [
     coordinates: { lat: 49.252, lng: -123.0019 },
     link: "/menu-item/2?host=Joyce&distance=1.5",
   },
-  // {
-  //   amount: "2",
-  //   image: <SandwichIcon width={57.5} height={57.5} />,
-  //   food: "Milk",
-  //   host: "Joyce",
-  //   distance: "1.3",
-  //   time: "5pm",
-  //   coordinates: { lat: 49.253, lng: -123.0015 },
-  //   link: "#",
-  // },
+  {
+    amount: "2",
+    image: <RamenIcon width={57.5} height={57.5} />,
+    food: "Ramen",
+    host: "Scott",
+    distance: "1.3",
+    time: "5pm",
+    coordinates: { lat: 49.253, lng: -123.0015 },
+    link: "/menu-item/3?host=Scott&distance=1.2",
+  },
 ];
 
 export default function MapPage() {
