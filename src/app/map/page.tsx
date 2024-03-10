@@ -81,7 +81,7 @@ export default function MapPage() {
 
   return (
     <div className="relative">
-      {isMounted && (
+      {isMounted && typeof window === undefined && (
         <>
           <MapContainer
             center={[latitude, longitude]}
