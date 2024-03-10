@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function SandwichIcon({
+export default function TomatoIcon({
   className,
   width,
   height,
@@ -12,8 +12,8 @@ export default function SandwichIcon({
   return (
     <Image
       className={className}
-      src="/sandwich.svg"
-      alt="Sandwich"
+      src="/tomato.svg"
+      alt="tomato"
       width={width}
       height={height}
     />

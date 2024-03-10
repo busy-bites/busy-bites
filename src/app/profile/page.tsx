@@ -18,7 +18,7 @@ export default function ProfilePage() {
   ];
 
   return (
-    <div className="mx-auto max-w-sm space-y-10">
+    <div className="space-y-10">
       <DynamicIsland>
         <div className="flex flex-col">
           <Headline className="mb-1">Sofia H.</Headline>

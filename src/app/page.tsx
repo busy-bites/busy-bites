@@ -9,7 +9,7 @@ import SoupIcon from "@/components/icons/SoupIcon";
 import SushiIcon from "@/components/icons/SushiIcon";
 
 const menuItems = [
-  { food: "Sandwich", icon: <SandwichIcon /> },
+  { food: "Sandwich", icon: <SandwichIcon width={55} height={55} /> },
   { food: "Ramen", icon: <RamenIcon /> },
   { food: "Sushi", icon: <SushiIcon /> },
   { food: "Salad", icon: <SaladIcon /> },

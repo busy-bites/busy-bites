@@ -22,7 +22,7 @@ import ThumbsUpIcon from "@/components/icons/ThumbsUpIcon";
 
 export default function DesignSystem() {
   const menuItems = [
-    { food: "Sandwich", icon: <SandwichIcon /> },
+    { food: "Sandwich", icon: <SandwichIcon width={55} height={55} /> },
     { food: "Ramen", icon: <RamenIcon /> },
     { food: "Sushi", icon: <SushiIcon /> },
     { food: "Salad", icon: <SaladIcon /> },
@@ -75,7 +75,7 @@ export default function DesignSystem() {
       {/* Menu overlay section */}
       <section>
         <MenuOverlay
-          image={<SandwichIcon />}
+          image={<SandwichIcon width={55} height={55} />}
           food="Sandwich"
           host="Jenny"
           distance="1"
