@@ -14,6 +14,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { menu } from "@/data/data";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export default function MenuItemPage({
@@ -26,7 +27,7 @@ export default function MenuItemPage({
   const host = searchParams.host;
   const distance = searchParams.distance;
 
-  const menuItem = menu.find((item) => item.id === id);
+  const menuItem = menu.find((item) => item.id === +id);
   if (!menuItem) return notFound();
   return (
     <div>
@@ -74,7 +75,9 @@ export default function MenuItemPage({
                 </div>
               </DialogHeader>
               <DialogFooter className="sm:justify-center">
-                <Button className="bg-accent">Check My Meal</Button>
+                <Link href={`/order/${menuItem.id}?status=confirmed`}>
+                  <Button className="bg-accent">Check My Meal</Button>
+                </Link>
               </DialogFooter>
             </DialogContent>
           </Dialog>

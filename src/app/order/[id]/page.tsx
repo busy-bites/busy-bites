@@ -20,6 +20,10 @@ const orders = [
     id: 1,
     food: "soup",
   },
+  {
+    id: 2,
+    food: "sandwich",
+  },
 ];
 
 export default function OrderPage({
@@ -40,26 +44,26 @@ export default function OrderPage({
   }
 
   useEffect(() => {
-    let id: any;
+    let timeoutId: any;
     if (status === "confirmed") {
-      id = setTimeout(() => {
-        replace("/order/1?status=preparing");
+      timeoutId = setTimeout(() => {
+        replace(`/order/${id}?status=preparing`);
       }, 3000);
     }
     if (status === "preparing") {
-      id = setTimeout(() => {
-        replace("/order/1?status=ready");
+      timeoutId = setTimeout(() => {
+        replace(`/order/${id}?status=ready`);
       }, 3000);
     }
     return () => {
-      if (id) clearTimeout(id);
+      if (timeoutId) clearTimeout(timeoutId);
     };
-  }, [status, replace]);
+  }, [status, replace, id]);
 
   const order = orders.find((order) => order.id === +id);
   if (!order) return notFound();
 
-  const menuItem = menu.find((item) => item.id === order.food);
+  const menuItem = menu.find((item) => item.id === order.id);
   if (!menuItem) return notFound();
 
   return (
