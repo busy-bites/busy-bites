@@ -1,3 +1,5 @@
+"use client";
+
 import AccentCard from "@/components/design/accent-card";
 import AddButton from "@/components/design/add-button";
 import Avatar from "@/components/design/avatar";
@@ -6,20 +8,14 @@ import DynamicIsland from "@/components/design/dynamic-island";
 import MenuItem from "@/components/design/menu-item";
 import RewardItem from "@/components/design/reward-item";
 import { Headline } from "@/components/design/typography";
-import EggIcon from "@/components/icons/EggIcon";
-import GlutenIcon from "@/components/icons/GlutenIcon";
-import MilkIcon from "@/components/icons/MilkIcon";
+
 import ThumbsUpIcon from "@/components/icons/ThumbsUpIcon";
-import { rewards } from "@/data/data";
+import { rewards, allergies as allergiesData } from "@/data/data";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function ProfilePage() {
-  const allergies = [
-    { food: "Milk", icon: <MilkIcon /> },
-    { food: "Egg", icon: <EggIcon /> },
-    { food: "Gluten", icon: <GlutenIcon /> },
-  ];
-
+  const [allergies, setAllergies] = useState(allergiesData);
   return (
     <div className="space-y-10">
       <DynamicIsland>
@@ -45,15 +41,21 @@ export default function ProfilePage() {
         </div>
 
         <section className=" flex flex-wrap gap-6">
-          {allergies.map((allergy) => (
-            <MenuItem
-              key={allergy.food}
-              food={allergy.food}
-              icon={allergy.icon}
-            />
-          ))}
+          {allergies.map(
+            (allergy) =>
+              allergy.selected && (
+                <MenuItem
+                  key={allergy.food}
+                  food={allergy.food}
+                  icon={allergy.icon}
+                />
+              ),
+          )}
           <div className="flex flex-col items-center gap-2">
-            <AddButton />
+            <AddButton
+              allergiesData={allergies}
+              setAllergiesData={setAllergies}
+            />
             <p>Add More</p>
           </div>
         </section>

@@ -41,3 +41,29 @@ export const rewards = [
       "Enjoy a $10 Gift Card redeemable at the BCIT Stand for any food and drinks.",
   },
 ];
+
+import EggIcon from "@/components/icons/EggIcon";
+import GlutenIcon from "@/components/icons/GlutenIcon";
+import MilkIcon from "@/components/icons/MilkIcon";
+import FishIcon from "@/components/icons/FishIcon";
+import PeanutIcon from "@/components/icons/PeanutIcon";
+import NutsIcon from "@/components/icons/NutsIcon";
+import PeachIcon from "@/components/icons/PeachIcon";
+import CaffineIcon from "@/components/icons/CaffineIcon";
+
+export type Allergy = {
+  food: string;
+  icon: JSX.Element;
+  selected: boolean;
+};
+
+export const allergies: Allergy[] = [
+  { food: "Milk", icon: <MilkIcon />, selected: true },
+  { food: "Egg", icon: <EggIcon />, selected: true },
+  { food: "Fish", icon: <FishIcon />, selected: false },
+  { food: "Gluten", icon: <GlutenIcon />, selected: true },
+  { food: "Peanuts", icon: <PeanutIcon />, selected: false },
+  { food: "Nuts", icon: <NutsIcon />, selected: false },
+  { food: "Peach", icon: <PeachIcon />, selected: false },
+  { food: "Caffine", icon: <CaffineIcon />, selected: false },
+];

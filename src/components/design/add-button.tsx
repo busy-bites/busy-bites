@@ -5,6 +5,7 @@ import { Plus } from "lucide-react";
 
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogFooter,
   DialogHeader,
@@ -12,27 +13,32 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
-import MilkIcon from "../icons/MilkIcon";
-import EggIcon from "../icons/EggIcon";
-import GlutenIcon from "../icons/GlutenIcon";
-import FishIcon from "../icons/FishIcon";
-import PeanutIcon from "../icons/PeanutIcon";
-import NutsIcon from "../icons/NutsIcon";
-import PeachIcon from "../icons/PeachIcon";
-import CaffineIcon from "../icons/CaffineIcon";
-import { FoodButton } from "./food";
+import { FoodButton, SelectableFoodButton } from "./food";
 
-export default function AddButton() {
-  const allergies = [
-    { food: "Milk", icon: <MilkIcon /> },
-    { food: "Egg", icon: <EggIcon /> },
-    { food: "Fish", icon: <FishIcon /> },
-    { food: "Gluten", icon: <GlutenIcon /> },
-    { food: "Peanuts", icon: <PeanutIcon /> },
-    { food: "Nuts", icon: <NutsIcon /> },
-    { food: "Peach", icon: <PeachIcon /> },
-    { food: "Caffine", icon: <CaffineIcon /> },
-  ];
+import { Allergy } from "@/data/data";
+import { Dispatch, SetStateAction, useState } from "react";
+
+export default function AddButton({
+  allergiesData,
+  setAllergiesData,
+}: {
+  allergiesData: Allergy[];
+  setAllergiesData: Dispatch<SetStateAction<Allergy[]>>;
+}) {
+  const [allergies, setAllergies] = useState(allergiesData);
+
+  const handleSave = () => {
+    setAllergiesData(allergies);
+  };
+  const handleSelectAllergy = (food: string) => {
+    setAllergies((prev) =>
+      prev.map((allergy) =>
+        allergy.food === food
+          ? { ...allergy, selected: !allergy.selected }
+          : allergy,
+      ),
+    );
+  };
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -50,7 +56,12 @@ export default function AddButton() {
               key={allergy.food}
               className="flex flex-col items-center gap-2"
             >
-              <FoodButton variant="outline">{allergy.icon}</FoodButton>
+              <SelectableFoodButton
+                selected={allergy.selected}
+                onClick={() => handleSelectAllergy(allergy.food)}
+              >
+                {allergy.icon}
+              </SelectableFoodButton>
               <span>{allergy.food}</span>
             </div>
           ))}
@@ -60,9 +71,15 @@ export default function AddButton() {
           </div>
         </div>
         <DialogFooter className="mt-8 sm:justify-center">
-          <Button className="bg-white hover:bg-gray-100" type="submit">
-            Save
-          </Button>
+          <DialogClose asChild>
+            <Button
+              className="bg-white hover:bg-gray-100"
+              type="submit"
+              onClick={handleSave}
+            >
+              Save
+            </Button>
+          </DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>
