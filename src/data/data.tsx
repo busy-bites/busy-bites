@@ -5,7 +5,7 @@ import SoupIcon from "@/components/icons/SoupIcon";
 
 export const menu = [
   {
-    id: "soup",
+    id: 1,
     icon: <SoupIcon width={311} height={215} />,
     reserveIcon: <SoupIcon width={173.14} height={119.7} />,
     description: `Discover the warmth of my homemade tomato soup, a comforting blend
@@ -15,7 +15,7 @@ export const menu = [
     mayContain: ["Nuts"],
   },
   {
-    id: "sandwich",
+    id: 2,
     icon: <SandwichIcon width={222.57} height={222.57} />,
     reserveIcon: <SandwichIcon width={140} height={140} />,
     description: `Delight in my Belt Sandwich—a symphony of crispy bacon, fresh eggs, and vibrant veggies hugged by golden toast. Experience a burst of flavors curated for the ultimate satisfaction in every bite.`,
