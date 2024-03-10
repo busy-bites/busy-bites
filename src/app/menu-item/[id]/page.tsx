@@ -53,7 +53,7 @@ export default function MenuItemPage({
             <p className="p-2 text-sm font-semibold">{menuItem.description}</p>
           </div>
         </div>
-        <div className="mt-20 px-2">
+        <div className="mt-10 px-2">
           <Dialog>
             <DialogTrigger asChild>
               <Button variant="secondary" className="w-full">
