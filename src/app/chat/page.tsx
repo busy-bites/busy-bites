@@ -4,7 +4,7 @@ import Avatar from "@/components/design/avatar";
 import { Smile, X, Image, ChevronRight } from "lucide-react";
 import DynamicIsland from "@/components/design/dynamic-island";
 import { Button } from "@/components/ui/button";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 type ChatMessage = {
   sender: string;
@@ -34,6 +34,13 @@ export default function ChatPage() {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState(chatMessages);
   const isSender = (sender: string) => sender === "Sophia";
+  useEffect(() => {
+    const chatSection = document.getElementById("chat-section");
+    chatSection?.scrollTo({
+      top: chatSection.scrollHeight,
+      behavior: "smooth",
+    });
+  }, [messages]);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -67,7 +74,10 @@ export default function ChatPage() {
       </DynamicIsland>
 
       {/* Chat section */}
-      <section className="flex flex-col gap-4">
+      <section
+        className="flex h-96 flex-col gap-4 overflow-auto px-2"
+        id="chat-section"
+      >
         <div className="flex flex-col gap-2">
           {messages.map((message) =>
             isSender(message.sender) ? (
