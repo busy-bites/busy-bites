@@ -46,7 +46,7 @@ export default function MenuItemPage({
           </div>
         </div>
       </DynamicIsland>
-      <section className="mt-20">
+      <section className="my-20">
         <div className="my-10 flex flex-1 items-end gap-2 px-2">
           <Avatar />
           <div className="rounded-3xl border border-secondary bg-accent px-2 py-4">
