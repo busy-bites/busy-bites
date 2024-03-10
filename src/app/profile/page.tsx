@@ -11,6 +11,7 @@ import GlutenIcon from "@/components/icons/GlutenIcon";
 import MilkIcon from "@/components/icons/MilkIcon";
 import ThumbsUpIcon from "@/components/icons/ThumbsUpIcon";
 import { rewards } from "@/data/data";
+import Link from "next/link";
 
 export default function ProfilePage() {
   const allergies = [
@@ -34,9 +35,12 @@ export default function ProfilePage() {
             <h1 className="h-6 text-xl font-bold text-black">My Allergies</h1>
           </div>
           <div>
-            <p className="text-right text-[13px] font-medium leading-7 text-gray-400 underline">
+            <Link
+              href="#"
+              className="text-right text-[13px] font-medium leading-7 text-gray-400 underline hover:text-gray-600"
+            >
               You need to Know
-            </p>
+            </Link>
           </div>
         </div>
 
@@ -59,9 +63,12 @@ export default function ProfilePage() {
             <h1 className="h-6 text-xl font-bold text-black">Foodie Power</h1>
           </div>
           <div>
-            <p className=" text-right text-[13px] font-medium leading-7 text-gray-400 underline">
+            <Link
+              href="#"
+              className=" text-right text-[13px] font-medium leading-7 text-gray-400 underline hover:text-gray-600"
+            >
               How This Works
-            </p>
+            </Link>
           </div>
         </section>
 
@@ -81,9 +88,12 @@ export default function ProfilePage() {
             <h1 className="h-6 text-xl font-bold text-black">Chef Level</h1>
           </div>
           <div>
-            <p className=" text-right text-[13px] font-medium leading-7 text-gray-400 underline">
+            <Link
+              href="#"
+              className=" text-right text-[13px] font-medium leading-7 text-gray-400 underline hover:text-gray-600"
+            >
               Reward Details
-            </p>
+            </Link>
           </div>
         </section>
 
@@ -95,14 +105,13 @@ export default function ProfilePage() {
         </div>
 
         {/* coin bar section */}
-        <section className="my-5">
+        <section className="mb-32 mt-5">
           <Coinbar />
-        </section>
-
-        {/* Reward section */}
-        <section className="grid grid-cols-2 gap-4">
-          <RewardItem reward={rewards[0]} />
-          <RewardItem reward={rewards[1]} />
+          {/* Reward section */}
+          <div className="mt-10 grid grid-cols-2 gap-4">
+            <RewardItem reward={rewards[0]} />
+            <RewardItem reward={rewards[1]} />
+          </div>
         </section>
       </div>
     </div>
