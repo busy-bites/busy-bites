@@ -4,8 +4,9 @@ import { icon } from "leaflet";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { MapOverlayCarousel } from "./map-overlay-carousel";
+import SandwichIcon from "@/components/icons/SandwichIcon";
 
 const ICON = icon({
   iconUrl: "/marker.png",
@@ -18,10 +19,44 @@ const PIN = icon({
   iconAnchor: [18, 51],
 });
 
+const menuItems = [
+  {
+    amount: "5",
+    image: <SandwichIcon width={57.5} height={57.5} />,
+    food: "Ramen",
+    host: "Jenny",
+    distance: "1",
+    time: "3pm",
+    coordinates: { lat: 49.2527, lng: -123.0034 },
+  },
+  {
+    amount: "3",
+    image: <SandwichIcon width={57.5} height={57.5} />,
+    food: "Sandwich",
+    host: "Sia",
+    distance: "1.5",
+    time: "4pm",
+    coordinates: { lat: 49.252, lng: -123.0019 },
+  },
+  {
+    amount: "2",
+    image: <SandwichIcon width={57.5} height={57.5} />,
+    food: "Milk",
+    host: "Joyce",
+    distance: "1.3",
+    time: "5pm",
+    coordinates: { lat: 49.253, lng: -123.0015 },
+  },
+];
+
 export default function MapPage() {
   const mapRef = useRef(null);
-  const latitude = 49.2527;
-  const longitude = -123.0034;
+  const latitude = menuItems[0].coordinates.lat;
+  const longitude = menuItems[0].coordinates.lng;
+  const [currentPinLocation, setCurrentPinLocation] = useState({
+    lat: latitude,
+    lng: longitude,
+  });
 
   return (
     <div className="relative">
@@ -36,11 +71,15 @@ export default function MapPage() {
         }}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        <Marker position={[latitude, longitude]} icon={ICON}></Marker>
-        <Marker position={[49.252, -123.0019]} icon={ICON}></Marker>
-        <Marker position={[latitude, longitude]} icon={PIN}></Marker>
+        {menuItems.map((item, index) => (
+          <Marker key={index} position={item.coordinates} icon={ICON}></Marker>
+        ))}
+        <Marker position={currentPinLocation} icon={PIN}></Marker>
       </MapContainer>
-      <MapOverlayCarousel />
+      <MapOverlayCarousel
+        mapOverlayItems={menuItems}
+        setCurrentPinLocation={setCurrentPinLocation}
+      />
     </div>
   );
 }
