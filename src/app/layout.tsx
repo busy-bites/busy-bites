@@ -7,8 +7,11 @@ import Navbar from "@/components/design/navbar";
 const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  manifest: "/manifest.json",
   title: "Busy Bites",
-  description: "",
+  description:
+    "Busy Bites is a food connection app designed to help students create healthy meal plans, even with busy schedules and limited cooking experience.",
+  themeColor: "#FFBE41",
 };
 
 export default function RootLayout({
