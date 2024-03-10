@@ -7,6 +7,7 @@ import SaladIcon from "@/components/icons/SaladIcon";
 import SandwichIcon from "@/components/icons/SandwichIcon";
 import SoupIcon from "@/components/icons/SoupIcon";
 import SushiIcon from "@/components/icons/SushiIcon";
+import Link from "next/link";
 
 const menuItems = [
   { food: "Sandwich", icon: <SandwichIcon width={55} height={55} /> },
@@ -36,8 +37,10 @@ export default function Home() {
         </div>
       </section>
       <section className="mt-6">
-        <Title>Hosts Near Me</Title>
-        <MapPreview />
+        <Link href="/map">
+          <Title>Hosts Near Me</Title>
+          <MapPreview />
+        </Link>
       </section>
     </div>
   );
