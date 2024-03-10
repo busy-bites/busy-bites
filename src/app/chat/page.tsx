@@ -60,7 +60,7 @@ export default function ChatPage() {
         {/* Avatar heading section */}
         <section className=" mt-7 flex items-center justify-end gap-52">
           <Avatar />
-          <X className="h-6 w-6 rounded-full bg-secondary" />
+          {/* <X className="h-6 w-6 rounded-full bg-secondary" /> */}
         </section>
 
         {/* Chat heading section */}
