@@ -24,6 +24,18 @@ const orders = [
     id: 2,
     food: "sandwich",
   },
+  {
+    id: 3,
+    food: "ramen",
+  },
+  {
+    id: 4,
+    food: "sushi",
+  },
+  {
+    id: 5,
+    food: "salad",
+  },
 ];
 
 export default function OrderPage({

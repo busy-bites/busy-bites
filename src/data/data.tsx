@@ -23,6 +23,33 @@ export const menu = [
     contains: ["Milk", "Gluten"],
     mayContain: ["Nuts", "Soy"],
   },
+  {
+    id: 3,
+    icon: <RamenIcon width={222.57} height={222.57} />,
+    reserveIcon: <RamenIcon width={140} height={140} />,
+    description: `Savor the warmth and richness of our signature ramen bowl. Immerse yourself in a symphony of handcrafted noodles, flavorful broth, and an array of fresh toppings. Elevate your comfort food experience with each spoonful of our delicious ramen.`,
+    food: "Ramen",
+    contains: ["Milk", "Gluten"],
+    mayContain: ["Nuts", "Soy"],
+  },
+  {
+    id: 4,
+    icon: <SushiIcon width={222.57} height={222.57} />,
+    reserveIcon: <SushiIcon width={140} height={140} />,
+    description: `Our rolls are a dance of fresh fish, creamy avocado, and crisp seaweed, all artfully crafted for an explosion of flavors in every bite. Savor a burst of meticulously curated flavors for the ultimate satisfaction in every bite!`,
+    food: "Calfornia Roll Sushi",
+    contains: ["Peanuts", "Gluten"],
+    mayContain: ["Nuts", "Soy", "Milk"],
+  },
+  {
+    id: 5,
+    icon: <SaladIcon width={222.57} height={222.57} />,
+    reserveIcon: <SaladIcon width={140} height={140} />,
+    description: `Crisp greens, juicy tomatoes, and an assortment of garden delights, all tossed in a zesty dressing. A burst of health and flavor awaits in every refreshing bite."`,
+    food: "Salad Sandwich",
+    contains: ["Nuts", "Peanuts"],
+    mayContain: ["Soy"],
+  },
 ];
 
 export const rewards = [
@@ -58,6 +85,9 @@ import PeanutIcon from "@/components/icons/PeanutIcon";
 import NutsIcon from "@/components/icons/NutsIcon";
 import PeachIcon from "@/components/icons/PeachIcon";
 import CaffineIcon from "@/components/icons/CaffineIcon";
+import SushiIcon from "@/components/icons/SushiIcon";
+import RamenIcon from "@/components/icons/RamenIcon";
+import SaladIcon from "@/components/icons/SaladIcon";
 
 export type Allergy = {
   food: string;

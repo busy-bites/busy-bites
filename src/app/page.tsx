@@ -10,10 +10,14 @@ import SushiIcon from "@/components/icons/SushiIcon";
 import Link from "next/link";
 
 const menuItems = [
-  { food: "Sandwich", icon: <SandwichIcon width={55} height={55} /> },
-  { food: "Ramen", icon: <RamenIcon /> },
-  { food: "Sushi", icon: <SushiIcon className="mt-3" /> },
-  { food: "Salad", icon: <SaladIcon /> },
+  { id: 2, food: "Sandwich", icon: <SandwichIcon width={55} height={55} /> },
+  { id: 3, food: "Ramen", icon: <RamenIcon width={60} height={45} /> },
+  {
+    id: 4,
+    food: "Sushi",
+    icon: <SushiIcon width={46} height={46} className="mt-3" />,
+  },
+  { id: 5, food: "Salad", icon: <SaladIcon width={66} height={62} /> },
 ];
 
 export default function Home() {
@@ -22,21 +26,28 @@ export default function Home() {
       <Headline> Good Appetite, Sofia</Headline>
       <section>
         <Title>Today&apos;s Special</Title>
-        <AccentCard>
-          <div>
-            <h3 className="text-lg font-semibold">Fresh Tomato Soup</h3>
-            <p className="text-sm font-semibold text-gray-700">
-              Jenny | Reserve By 3pm
-            </p>
-          </div>
-          <SoupIcon width={147.8} height={101.63} />
-        </AccentCard>
+        <Link href="/menu-item/1?host=Jenny&distance=2">
+          <AccentCard>
+            <div>
+              <h3 className="text-lg font-semibold">Fresh Tomato Soup</h3>
+              <p className="text-sm font-semibold text-gray-700">
+                Jenny | Reserve By 3pm
+              </p>
+            </div>
+            <SoupIcon width={147.8} height={101.63} />
+          </AccentCard>
+        </Link>
       </section>
       <section className="mt-6">
         <Title>Today&apos;s Menu</Title>
         <div className="flex gap-5">
           {menuItems.map((item) => (
-            <MenuItem key={item.food} {...item} />
+            <Link
+              href={`/menu-item/${item.id}?host=Jerry&distance=2`}
+              key={item.food}
+            >
+              <MenuItem {...item} />
+            </Link>
           ))}
         </div>
       </section>

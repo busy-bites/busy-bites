@@ -1,13 +1,21 @@
 import Image from "next/image";
 
-export default function RamenIcon({ className }: { className?: string }) {
+export default function RamenIcon({
+  className,
+  width,
+  height,
+}: {
+  className?: string;
+  width: number;
+  height: number;
+}) {
   return (
     <Image
       className={className}
       src="/pasta.svg"
       alt="ramen"
-      width={60}
-      height={45}
+      width={width}
+      height={height}
     />
   );
 }
