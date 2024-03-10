@@ -67,7 +67,7 @@ export default function MapPage() {
         style={{
           height: "calc(100dvh - 56px)",
           width: "100%",
-          zIndex: -5,
+          zIndex: 0,
         }}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
