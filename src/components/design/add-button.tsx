@@ -46,7 +46,7 @@ export default function AddButton({
           <Plus className="stroke-accent" />
         </button>
       </DialogTrigger>
-      <DialogContent className="border-none bg-[#FFD78A] sm:max-w-[425px]">
+      <DialogContent className="rounded-3xl border-none bg-[#FFD78A] sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle></DialogTitle>
         </DialogHeader>

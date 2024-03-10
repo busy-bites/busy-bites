@@ -31,7 +31,7 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
-          <Link href="/order">
+          <Link href="/order/1?status=ready">
             <ShoppingCart
               className={cn({
                 "stroke-gray-500 hover:stroke-black": pathname !== "/order",

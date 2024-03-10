@@ -13,7 +13,7 @@ type Reward = {
   id: string;
   icon: JSX.Element;
   title: string;
-  description: string;
+  description: React.ReactNode;
 };
 
 export default function RewardItem({ reward }: { reward: Reward }) {
@@ -28,13 +28,15 @@ export default function RewardItem({ reward }: { reward: Reward }) {
           </div>
         </div>
       </DialogTrigger>
-      <DialogContent className="border-0 bg-secondary sm:max-w-[425px]">
+      <DialogContent className="rounded-3xl border-0 bg-secondary sm:max-w-[425px]">
         <DialogHeader className="text-center">
-          <div className="mx-auto mb-10 w-fit rounded-3xl bg-accent drop-shadow-md">
+          <div className="mx-auto mb-4 w-fit rounded-3xl bg-accent drop-shadow-md">
             {reward.icon}
           </div>
-          <DialogTitle className="text-center">{reward.title}</DialogTitle>
-          <p className="pt-4">{reward.description}</p>
+          <DialogTitle className="text-center text-lg font-bold">
+            {reward.title}
+          </DialogTitle>
+          {reward.description}
           <p>Thank you for your great culinary skills!</p>
         </DialogHeader>
         <DialogFooter className="pt-10 sm:justify-center">

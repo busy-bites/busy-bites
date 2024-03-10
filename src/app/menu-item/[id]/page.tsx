@@ -59,7 +59,7 @@ export default function MenuItemPage({
                 Reserve
               </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-md border-0 bg-secondary">
+            <DialogContent className="max-w-md rounded-3xl border-0 bg-secondary">
               <DialogHeader className="mx-auto max-w-xs">
                 <div className=" mx-auto w-fit rounded-3xl bg-accent drop-shadow-md">
                   {menuItem.reserveIcon}

@@ -30,15 +30,23 @@ export const rewards = [
     id: "fresh-ingredients",
     icon: <CarrotIcon width={140} height={140} className="mx-auto" />,
     title: "Fresh Ingredients",
-    description:
-      "Receive a bag of fresh vegetables of your choice at BCIT Food Pantry.",
+    description: (
+      <p className="pt-4">
+        Receive a bag of <span className="font-bold">fresh vegetables</span> of
+        your choice at BCIT Food Pantry.
+      </p>
+    ),
   },
   {
     id: "giftcard",
     icon: <CoffeeCupIcon width={140} height={140} className="mx-auto" />,
     title: "BCIT Stand Gift Card",
-    description:
-      "Enjoy a $10 Gift Card redeemable at the BCIT Stand for any food and drinks.",
+    description: (
+      <p className="pt-4">
+        Enjoy a <span className="font-bold">$10 Gift Card</span> redeemable at
+        the BCIT Stand for any food and drinks.
+      </p>
+    ),
   },
 ];
 

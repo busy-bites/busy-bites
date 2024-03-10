@@ -76,11 +76,18 @@ export default function ProfilePage() {
 
         {/* AccentCard Section */}
         <section className="mt-10">
-          <AccentCard
-            image={<ThumbsUpIcon width={147.8} height={101.63} />}
-            title="Send Thanks to Chief"
-            description="Recent Meal by Jenny"
-          />
+          <AccentCard>
+            <div>
+              <h3 className="text-lg font-bold text-gray-900">
+                Send Thanks to Chief
+              </h3>
+              <p className="text-sm font-semibold text-gray-400">
+                Recent Meal by{" "}
+                <span className="font-bold text-gray-900">Jenny</span>
+              </p>
+            </div>
+            <ThumbsUpIcon width={147.8} height={101.63} />
+          </AccentCard>
         </section>
 
         {/* Chef level section */}

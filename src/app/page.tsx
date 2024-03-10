@@ -22,11 +22,15 @@ export default function Home() {
       <Headline> Good Appetite, Sofia</Headline>
       <section>
         <Title>Today&apos;s Special</Title>
-        <AccentCard
-          image={<SoupIcon width={147.8} height={101.63} />}
-          title="Fresh Tomato Soup"
-          description="Jenny | Reserve By 3pm "
-        />
+        <AccentCard>
+          <div>
+            <h3 className="text-lg font-semibold">Fresh Tomato Soup</h3>
+            <p className="text-sm font-semibold text-gray-700">
+              Jenny | Reserve By 3pm
+            </p>
+          </div>
+          <SoupIcon width={147.8} height={101.63} />
+        </AccentCard>
       </section>
       <section className="mt-6">
         <Title>Today&apos;s Menu</Title>
