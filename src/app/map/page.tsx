@@ -71,6 +71,7 @@ export default function MapPage() {
     lat: latitude,
     lng: longitude,
   });
+  const [selectedMenuItem, setSelectedMenuItem] = useState(0);
 
   return (
     <div className="relative">
@@ -93,6 +94,8 @@ export default function MapPage() {
       <MapOverlayCarousel
         mapOverlayItems={menuItems}
         setCurrentPinLocation={setCurrentPinLocation}
+        selectedMenuItem={selectedMenuItem}
+        setSelectedMenuItem={setSelectedMenuItem}
       />
     </div>
   );
