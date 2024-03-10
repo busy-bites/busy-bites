@@ -75,7 +75,7 @@ export default function ChatPage() {
 
       {/* Chat section */}
       <section
-        className="flex h-[calc(100vh-460px)] flex-col gap-4 overflow-auto px-2"
+        className="flex h-[calc(100dvh-460px)] flex-col gap-4 overflow-auto px-2"
         id="chat-section"
       >
         <div className="flex flex-col gap-2">
