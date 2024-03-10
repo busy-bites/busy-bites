@@ -1,5 +1,3 @@
-import SandwichIcon from "../icons/SandwichIcon";
-
 export default function MenuOverlay({
   food,
   host,
