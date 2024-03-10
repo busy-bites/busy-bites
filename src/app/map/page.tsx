@@ -39,7 +39,7 @@ const menuItems: MenuItem[] = [
     distance: "1",
     time: "3pm",
     coordinates: { lat: 49.2527, lng: -123.0034 },
-    link: "/menu-item/soup?host=Jenny&distance=1",
+    link: "/menu-item/1?host=Jenny&distance=1",
   },
   {
     amount: "3",
@@ -49,7 +49,7 @@ const menuItems: MenuItem[] = [
     distance: "1.5",
     time: "4pm",
     coordinates: { lat: 49.252, lng: -123.0019 },
-    link: "/menu-item/sandwich?host=Joyce&distance=1.5",
+    link: "/menu-item/2?host=Joyce&distance=1.5",
   },
   // {
   //   amount: "2",
