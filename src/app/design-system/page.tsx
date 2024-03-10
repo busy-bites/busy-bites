@@ -19,6 +19,7 @@ import { Coinbar } from "@/components/design/coinbar";
 
 import MapPreview from "@/components/design/map-preview";
 import ThumbsUpIcon from "@/components/icons/ThumbsUpIcon";
+import MapOverlay from "@/components/design/map-overlay";
 
 export default function DesignSystem() {
   const menuItems = [
@@ -81,6 +82,18 @@ export default function DesignSystem() {
           distance="1"
         />
       </section>
+      {/* Map overlay section */}
+      <section>
+        <MapOverlay
+          amount="5"
+          image={<SandwichIcon width={57.5} height={57.5} />}
+          food="Ramen"
+          host="Jenny"
+          distance="1"
+          time="3pm"
+        />
+      </section>
+
       {/* Accent card section */}
       <section>
         <AccentCard
