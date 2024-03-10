@@ -20,8 +20,6 @@ import { Coinbar } from "@/components/design/coinbar";
 import MapPreview from "@/components/design/map-preview";
 import ThumbsUpIcon from "@/components/icons/ThumbsUpIcon";
 import MapOverlay from "@/components/design/map-overlay";
-import CoffeeCupIcon from "@/components/icons/CoffeeCupIcon";
-import CoinIcon from "@/components/icons/CoinIcon";
 import { rewards } from "@/data/data";
 import RewardItem from "@/components/design/reward-item";
 
