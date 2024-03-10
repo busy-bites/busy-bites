@@ -48,7 +48,7 @@ export default function ChatPage() {
   };
 
   return (
-    <div className="mx-auto max-w-sm space-y-10">
+    <div className="space-y-10">
       <DynamicIsland className=" flex flex-col">
         {/* Avatar heading section */}
         <section className=" mt-7 flex items-center justify-end gap-52">
