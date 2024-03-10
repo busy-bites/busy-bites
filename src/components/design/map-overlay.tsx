@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import Link from "next/link";
 
@@ -9,7 +10,9 @@ export default function MapOverlay({
   image,
   time,
   link,
+  selected,
 }: {
+  selected: boolean;
   image: React.ReactNode;
   food: string;
   host: string;
@@ -19,8 +22,24 @@ export default function MapOverlay({
   link: string;
 }) {
   return (
-    <div className="flex w-fit items-start gap-6 rounded-3xl bg-secondary px-4 py-4">
-      <div className="flex h-[68px] w-[68px] items-center justify-center rounded-full bg-accent">
+    <div
+      className={cn(
+        "flex w-fit cursor-pointer items-start gap-6 rounded-3xl px-4 py-4 transition-colors duration-300",
+        {
+          "bg-secondary": selected,
+          "bg-accent": !selected,
+        },
+      )}
+    >
+      <div
+        className={cn(
+          "flex h-[68px] w-[68px] items-center justify-center rounded-full bg-accent transition-colors duration-300",
+          {
+            "bg-secondary": !selected,
+            "bg-accent": selected,
+          },
+        )}
+      >
         {image}
       </div>
       <div>
