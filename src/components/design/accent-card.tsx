@@ -1,5 +1,3 @@
-import SoupIcon from "@/components/icons/SoupIcon";
-
 export default function AccentCard({
   image,
   title,

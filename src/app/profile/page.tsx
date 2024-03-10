@@ -4,11 +4,13 @@ import Avatar from "@/components/design/avatar";
 import { Coinbar } from "@/components/design/coinbar";
 import DynamicIsland from "@/components/design/dynamic-island";
 import MenuItem from "@/components/design/menu-item";
+import RewardItem from "@/components/design/reward-item";
 import { Headline } from "@/components/design/typography";
 import EggIcon from "@/components/icons/EggIcon";
 import GlutenIcon from "@/components/icons/GlutenIcon";
 import MilkIcon from "@/components/icons/MilkIcon";
 import ThumbsUpIcon from "@/components/icons/ThumbsUpIcon";
+import { rewards } from "@/data/data";
 
 export default function ProfilePage() {
   const allergies = [
@@ -93,8 +95,14 @@ export default function ProfilePage() {
         </div>
 
         {/* coin bar section */}
-        <section className="mt-5">
+        <section className="my-5">
           <Coinbar />
+        </section>
+
+        {/* Reward section */}
+        <section className="grid grid-cols-2 gap-4">
+          <RewardItem reward={rewards[0]} />
+          <RewardItem reward={rewards[1]} />
         </section>
       </div>
     </div>

@@ -38,7 +38,7 @@ export default function RewardItem({ reward }: { reward: Reward }) {
           <p>Thank you for your great culinary skills!</p>
         </DialogHeader>
         <DialogFooter className="pt-10 sm:justify-center">
-          <Button type="submit" className="w-full bg-white drop-shadow-sm">
+          <Button type="submit" className="w-full bg-white drop-shadow-md">
             Redeem
           </Button>
         </DialogFooter>
