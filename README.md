@@ -8,4 +8,4 @@ Our research indicates that many BCIT students experience difficulty maintaining
 
 
 ## Usage
-visit our figma link at https://www.figma.com/file/WP7zFdNUzOxf7UoNr3gVj5/Busy-Bites-QDS-Hackathon-2024?type=design&node-id=1480%3A0&mode=design&t=8TZmIOgo1Rtv6Nno-1
+Visit our figma link at https://www.figma.com/file/WP7zFdNUzOxf7UoNr3gVj5/Busy-Bites-QDS-Hackathon-2024?type=design&node-id=1480%3A0&mode=design&t=8TZmIOgo1Rtv6Nno-1
