@@ -66,7 +66,7 @@ export default function DesignSystem() {
       </section>
       {/* Add section */}
       <section className="flex gap-5">
-        <AddButton />
+        {/* <AddButton /> */}
         <OtherAddButton />
       </section>
       {/* Avatar section */}
