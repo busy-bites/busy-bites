@@ -22,10 +22,11 @@ export default function MenuItemPage({
   searchParams,
 }: {
   params: { id: string };
-  searchParams: { host: string; distance: string };
+  searchParams: { host: string; distance: string; special: boolean };
 }) {
   const host = searchParams.host;
   const distance = searchParams.distance;
+  const special = searchParams.special;
 
   const menuItem = menu.find((item) => item.id === +id);
   if (!menuItem) return notFound();
@@ -33,7 +34,7 @@ export default function MenuItemPage({
     <div>
       <DynamicIsland>
         <div className="mt-5 flex w-full flex-col items-center">
-          <Headline className="mb-1">Today&apos;s Special</Headline>
+          <Headline className="mb-1">{`Today's ${special ? "Special" : "Menu"}`}</Headline>
           <span className="text-gray-600">
             Host: {host} | {distance} km away
           </span>

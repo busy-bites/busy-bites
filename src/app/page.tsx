@@ -26,7 +26,7 @@ export default function Home() {
       <Headline> Good Appetite, Sofia</Headline>
       <section>
         <Title>Today&apos;s Special</Title>
-        <Link href="/menu-item/1?host=Jenny&distance=2">
+        <Link href="/menu-item/1?host=Jenny&distance=2&special=true">
           <AccentCard>
             <div>
               <h3 className="text-lg font-semibold">Fresh Tomato Soup</h3>

@@ -46,7 +46,7 @@ export const menu = [
     icon: <SaladIcon width={222.57} height={222.57} />,
     reserveIcon: <SaladIcon width={140} height={140} />,
     description: `Crisp greens, juicy tomatoes, and an assortment of garden delights, all tossed in a zesty dressing. A burst of health and flavor awaits in every refreshing bite."`,
-    food: "Salad Sandwich",
+    food: "Caesar Salad",
     contains: ["Nuts", "Peanuts"],
     mayContain: ["Soy"],
   },
