@@ -17,7 +17,7 @@ import { useState } from "react";
 export default function ProfilePage() {
   const [allergies, setAllergies] = useState(allergiesData);
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 pb-[100px]">
       <DynamicIsland>
         <div className="flex flex-col">
           <Headline className="mb-1">Sofia H.</Headline>
@@ -107,7 +107,7 @@ export default function ProfilePage() {
         </div>
 
         {/* coin bar section */}
-        <section className="mb-32 mt-5">
+        <section className="mt-5">
           <Coinbar />
           {/* Reward section */}
           <div className="mt-10 grid grid-cols-2 gap-4">

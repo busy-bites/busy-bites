@@ -18,7 +18,7 @@ const menuItems = [
 
 export default function Home() {
   return (
-    <div className="px-4 pt-14">
+    <div className="px-4 pb-[100px] pt-14">
       <Headline> Good Appetite, Sofia</Headline>
       <section>
         <Title>Today&apos;s Special</Title>

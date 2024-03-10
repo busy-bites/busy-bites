@@ -63,7 +63,7 @@ export default function OrderPage({
   if (!menuItem) return notFound();
 
   return (
-    <div>
+    <div className="pb-[100px]">
       <DynamicIsland variant={status === "ready" ? "default" : "gradient"}>
         <div className="mt-5 flex w-full flex-col items-center">
           <Headline className="mb-1">

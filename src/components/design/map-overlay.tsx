@@ -28,7 +28,7 @@ export default function MapOverlay({
           {host}&apos;s {food}
         </h3>
         <p className="text-xs">
-          {amount} Avaliable | {distance}km away
+          {amount} Avaliable | {distance} km away
         </p>
         <p className="text-xs">
           Reserve before <span className="font-bold">{time}</span>

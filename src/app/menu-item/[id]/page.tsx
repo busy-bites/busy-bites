@@ -18,9 +18,14 @@ import { notFound } from "next/navigation";
 
 export default function MenuItemPage({
   params: { id },
+  searchParams,
 }: {
   params: { id: string };
+  searchParams: { host: string; distance: string };
 }) {
+  const host = searchParams.host;
+  const distance = searchParams.distance;
+
   const menuItem = menu.find((item) => item.id === id);
   if (!menuItem) return notFound();
   return (
@@ -28,7 +33,9 @@ export default function MenuItemPage({
       <DynamicIsland>
         <div className="mt-5 flex w-full flex-col items-center">
           <Headline className="mb-1">Today&apos;s Special</Headline>
-          <span className="text-gray-600">Host: Jenny | 1 km away</span>
+          <span className="text-gray-600">
+            Host: {host} | {distance} km away
+          </span>
           {menuItem.icon}
           <p className="text-xl font-bold">{menuItem.food}</p>
           <div className="mt-2 text-sm">

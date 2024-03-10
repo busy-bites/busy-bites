@@ -7,6 +7,7 @@ import "leaflet/dist/leaflet.css";
 import { useRef, useState } from "react";
 import { MapOverlayCarousel } from "./map-overlay-carousel";
 import SandwichIcon from "@/components/icons/SandwichIcon";
+import SoupIcon from "@/components/icons/SoupIcon";
 
 const ICON = icon({
   iconUrl: "/marker.png",
@@ -19,34 +20,47 @@ const PIN = icon({
   iconAnchor: [18, 51],
 });
 
-const menuItems = [
+export type MenuItem = {
+  amount: string;
+  image: React.ReactNode;
+  food: string;
+  host: string;
+  distance: string;
+  time: string;
+  coordinates: { lat: number; lng: number };
+  link: string;
+};
+const menuItems: MenuItem[] = [
   {
     amount: "5",
-    image: <SandwichIcon width={57.5} height={57.5} />,
-    food: "Ramen",
+    image: <SoupIcon width={57.5} height={57.5} />,
+    food: "Soup",
     host: "Jenny",
     distance: "1",
     time: "3pm",
     coordinates: { lat: 49.2527, lng: -123.0034 },
+    link: "/menu-item/soup?host=Jenny&distance=1",
   },
   {
     amount: "3",
     image: <SandwichIcon width={57.5} height={57.5} />,
     food: "Sandwich",
-    host: "Sia",
+    host: "Joyce",
     distance: "1.5",
     time: "4pm",
     coordinates: { lat: 49.252, lng: -123.0019 },
+    link: "/menu-item/sandwich?host=Joyce&distance=1.5",
   },
-  {
-    amount: "2",
-    image: <SandwichIcon width={57.5} height={57.5} />,
-    food: "Milk",
-    host: "Joyce",
-    distance: "1.3",
-    time: "5pm",
-    coordinates: { lat: 49.253, lng: -123.0015 },
-  },
+  // {
+  //   amount: "2",
+  //   image: <SandwichIcon width={57.5} height={57.5} />,
+  //   food: "Milk",
+  //   host: "Joyce",
+  //   distance: "1.3",
+  //   time: "5pm",
+  //   coordinates: { lat: 49.253, lng: -123.0015 },
+  //   link: "#",
+  // },
 ];
 
 export default function MapPage() {
