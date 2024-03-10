@@ -21,7 +21,7 @@ export default function ProfilePage() {
       <DynamicIsland>
         <div className="flex flex-col">
           <Headline className="mb-1">Sofia H.</Headline>
-          <p className="text-sm font-medium text-accent">UID #A00000001</p>
+          <p className="text-sm font-medium text-accent">ID #A00000001</p>
         </div>
         <Avatar />
       </DynamicIsland>
