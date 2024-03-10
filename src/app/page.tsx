@@ -12,7 +12,7 @@ import Link from "next/link";
 const menuItems = [
   { food: "Sandwich", icon: <SandwichIcon width={55} height={55} /> },
   { food: "Ramen", icon: <RamenIcon /> },
-  { food: "Sushi", icon: <SushiIcon /> },
+  { food: "Sushi", icon: <SushiIcon className="mt-3" /> },
   { food: "Salad", icon: <SaladIcon /> },
 ];
 
