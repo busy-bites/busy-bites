@@ -20,6 +20,8 @@ import { Coinbar } from "@/components/design/coinbar";
 import MapPreview from "@/components/design/map-preview";
 import ThumbsUpIcon from "@/components/icons/ThumbsUpIcon";
 import MapOverlay from "@/components/design/map-overlay";
+import { rewards } from "@/data/data";
+import RewardItem from "@/components/design/reward-item";
 
 export default function DesignSystem() {
   const menuItems = [
@@ -35,7 +37,7 @@ export default function DesignSystem() {
     { food: "Gluten", icon: <GlutenIcon /> },
   ];
   return (
-    <div className="mx-auto max-w-md space-y-10 bg-gray-100 p-5">
+    <div className="mx-auto mb-20 max-w-md space-y-10 bg-gray-100 p-5">
       {/* Button section */}
       <section className="flex gap-5">
         <Button>Button CTA</Button>
@@ -125,6 +127,10 @@ export default function DesignSystem() {
       </section>
       <section>
         <ThumbsUpIcon width={123.36} height={105} />
+      </section>
+      <section className="grid grid-cols-2 gap-2">
+        <RewardItem reward={rewards[0]} />
+        <RewardItem reward={rewards[1]} />
       </section>
     </div>
   );

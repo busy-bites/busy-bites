@@ -6,8 +6,8 @@ export default function GlutenIcon({ className }: { className?: string }) {
       className={className}
       src="/gluten.svg"
       alt="gluten"
-      width={60}
-      height={45}
+      width={55}
+      height={55}
     />
   );
 }

@@ -1,28 +1,27 @@
+"use client";
+
 import AccentCard from "@/components/design/accent-card";
 import AddButton from "@/components/design/add-button";
 import Avatar from "@/components/design/avatar";
 import { Coinbar } from "@/components/design/coinbar";
 import DynamicIsland from "@/components/design/dynamic-island";
 import MenuItem from "@/components/design/menu-item";
+import RewardItem from "@/components/design/reward-item";
 import { Headline } from "@/components/design/typography";
-import EggIcon from "@/components/icons/EggIcon";
-import GlutenIcon from "@/components/icons/GlutenIcon";
-import MilkIcon from "@/components/icons/MilkIcon";
+
 import ThumbsUpIcon from "@/components/icons/ThumbsUpIcon";
+import { rewards, allergies as allergiesData } from "@/data/data";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function ProfilePage() {
-  const allergies = [
-    { food: "Milk", icon: <MilkIcon /> },
-    { food: "Egg", icon: <EggIcon /> },
-    { food: "Gluten", icon: <GlutenIcon /> },
-  ];
-
+  const [allergies, setAllergies] = useState(allergiesData);
   return (
     <div className="space-y-10">
       <DynamicIsland>
         <div className="flex flex-col">
           <Headline className="mb-1">Sofia H.</Headline>
-          <p className="text-sm font-medium text-accent">UID #A00000001</p>
+          <p className="text-sm font-medium text-accent">ID #A00000001</p>
         </div>
         <Avatar />
       </DynamicIsland>
@@ -32,22 +31,31 @@ export default function ProfilePage() {
             <h1 className="h-6 text-xl font-bold text-black">My Allergies</h1>
           </div>
           <div>
-            <p className="text-right text-[13px] font-medium leading-7 text-gray-400 underline">
+            <Link
+              href="#"
+              className="text-right text-[13px] font-medium leading-7 text-gray-400 underline hover:text-gray-600"
+            >
               You need to Know
-            </p>
+            </Link>
           </div>
         </div>
 
         <section className=" flex flex-wrap gap-6">
-          {allergies.map((allergy) => (
-            <MenuItem
-              key={allergy.food}
-              food={allergy.food}
-              icon={allergy.icon}
-            />
-          ))}
+          {allergies.map(
+            (allergy) =>
+              allergy.selected && (
+                <MenuItem
+                  key={allergy.food}
+                  food={allergy.food}
+                  icon={allergy.icon}
+                />
+              ),
+          )}
           <div className="flex flex-col items-center gap-2">
-            <AddButton />
+            <AddButton
+              allergiesData={allergies}
+              setAllergiesData={setAllergies}
+            />
             <p>Add More</p>
           </div>
         </section>
@@ -57,9 +65,12 @@ export default function ProfilePage() {
             <h1 className="h-6 text-xl font-bold text-black">Foodie Power</h1>
           </div>
           <div>
-            <p className=" text-right text-[13px] font-medium leading-7 text-gray-400 underline">
+            <Link
+              href="#"
+              className=" text-right text-[13px] font-medium leading-7 text-gray-400 underline hover:text-gray-600"
+            >
               How This Works
-            </p>
+            </Link>
           </div>
         </section>
 
@@ -79,9 +90,12 @@ export default function ProfilePage() {
             <h1 className="h-6 text-xl font-bold text-black">Chef Level</h1>
           </div>
           <div>
-            <p className=" text-right text-[13px] font-medium leading-7 text-gray-400 underline">
+            <Link
+              href="#"
+              className=" text-right text-[13px] font-medium leading-7 text-gray-400 underline hover:text-gray-600"
+            >
               Reward Details
-            </p>
+            </Link>
           </div>
         </section>
 
@@ -93,8 +107,13 @@ export default function ProfilePage() {
         </div>
 
         {/* coin bar section */}
-        <section className="mt-5">
+        <section className="mb-32 mt-5">
           <Coinbar />
+          {/* Reward section */}
+          <div className="mt-10 grid grid-cols-2 gap-4">
+            <RewardItem reward={rewards[0]} />
+            <RewardItem reward={rewards[1]} />
+          </div>
         </section>
       </div>
     </div>

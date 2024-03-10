@@ -33,3 +33,27 @@ export function FoodButton({
     </button>
   );
 }
+
+export function SelectableFoodButton({
+  children,
+  selected,
+  onClick,
+}: {
+  children: React.ReactNode;
+  selected: boolean;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      className={cn(
+        "flex h-[74px] w-[74px] items-center justify-center rounded-full bg-accent transition-all hover:ring-[3px] hover:ring-orange-600",
+        {
+          "ring-[3px] ring-orange-600": selected,
+        },
+      )}
+    >
+      {children}
+    </button>
+  );
+}

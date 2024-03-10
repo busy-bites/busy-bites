@@ -1,3 +1,5 @@
+import CarrotIcon from "@/components/icons/CarrotIcon";
+import CoffeeCupIcon from "@/components/icons/CoffeeCupIcon";
 import SandwichIcon from "@/components/icons/SandwichIcon";
 import SoupIcon from "@/components/icons/SoupIcon";
 
@@ -21,4 +23,47 @@ export const menu = [
     contains: ["Milk", "Gluten"],
     mayContain: ["Nuts", "Soy"],
   },
+];
+
+export const rewards = [
+  {
+    id: "fresh-ingredients",
+    icon: <CarrotIcon width={140} height={140} className="mx-auto" />,
+    title: "Fresh Ingredients",
+    description:
+      "Receive a bag of fresh vegetables of your choice at BCIT Food Pantry.",
+  },
+  {
+    id: "giftcard",
+    icon: <CoffeeCupIcon width={140} height={140} className="mx-auto" />,
+    title: "BCIT Stand Gift Card",
+    description:
+      "Enjoy a $10 Gift Card redeemable at the BCIT Stand for any food and drinks.",
+  },
+];
+
+import EggIcon from "@/components/icons/EggIcon";
+import GlutenIcon from "@/components/icons/GlutenIcon";
+import MilkIcon from "@/components/icons/MilkIcon";
+import FishIcon from "@/components/icons/FishIcon";
+import PeanutIcon from "@/components/icons/PeanutIcon";
+import NutsIcon from "@/components/icons/NutsIcon";
+import PeachIcon from "@/components/icons/PeachIcon";
+import CaffineIcon from "@/components/icons/CaffineIcon";
+
+export type Allergy = {
+  food: string;
+  icon: JSX.Element;
+  selected: boolean;
+};
+
+export const allergies: Allergy[] = [
+  { food: "Milk", icon: <MilkIcon />, selected: true },
+  { food: "Egg", icon: <EggIcon />, selected: true },
+  { food: "Fish", icon: <FishIcon />, selected: false },
+  { food: "Gluten", icon: <GlutenIcon />, selected: true },
+  { food: "Peanuts", icon: <PeanutIcon />, selected: false },
+  { food: "Nuts", icon: <NutsIcon />, selected: false },
+  { food: "Peach", icon: <PeachIcon />, selected: false },
+  { food: "Caffine", icon: <CaffineIcon />, selected: false },
 ];
