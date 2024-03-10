@@ -5,7 +5,7 @@ export default function MapPreview() {
     <Image
       src="/map_preview.png"
       alt="map_preview"
-      className="rounded-3xl"
+      className="mx-auto w-full rounded-3xl"
       quality={100}
       width={342}
       height={190}
