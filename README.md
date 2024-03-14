@@ -1,4 +1,4 @@
-## Busy Bites
+## Busy Bites: QDS Hacks 2024 Finalist
 
 Busy Bites is a food connection app designed to help students create healthy meal plans, even with busy schedules and limited cooking experience. The app promotes nutritious choices as an alternative to fast food.
 
